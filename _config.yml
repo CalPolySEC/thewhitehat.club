@@ -1,0 +1,13 @@
+# Site settings
+title: The White Hat - Cal Poly SLO
+description: >
+  The White Hat’s mission is to provide the tools, knowledge, skills and
+  resources to make the internet a safer place by protecting personal computers,
+  private data and information systems.
+url: "https://thewhitehat.club"
+
+# Build settings
+markdown: kramdown
+
+sass:
+    style: compressed
