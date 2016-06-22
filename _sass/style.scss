@@ -32,6 +32,11 @@ body {
     text-align: center;
 }
 
+.navbar > a {
+    color: inherit;
+    text-decoration: none;
+}
+
 .logo {
     padding-top: 30px;
     padding-right: 30px;
