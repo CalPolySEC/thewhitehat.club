@@ -6,6 +6,8 @@ description: >
   private data and information systems.
 url: "https://thewhitehat.club"
 
+exclude: ["README.md"]
+
 # Build settings
 markdown: kramdown
 
