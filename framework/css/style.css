@@ -1,0 +1,62 @@
+@font-face { 
+    font-family: 'HK Grotesk';
+    font-weight: 400;
+    src: url('fonts/HKGrotesk-Medium.otf'); 
+} 
+ 
+@font-face { 
+    font-family: 'HK Grotesk'; 
+    font-weight: 500; 
+    src: url('fonts/HKGrotesk-Bold.otf');
+}
+
+@font-face { 
+    font-family: 'HK Grotesk'; 
+    font-weight: 300; 
+    src: url('fonts/HKGrotesk-Light.otf');
+}
+
+html, body {
+    padding: 0px;
+    margin: 0px;
+    color: #232121;
+}
+
+body {
+    font-family: 'HK Grotesk','Helvetica', 'Arial', sans-serif;
+}
+
+.navbar {
+    font-weight: 400;
+    word-spacing: 70px;
+    text-align: center;
+}
+
+.logo {
+    padding-top: 30px;
+    padding-right: 30px;
+}
+
+.logo-desc{
+    margin-left: 30px;
+    margin-top: 120px;
+    max-width: 300px;
+    font-size: 30px;
+    font-weight: 300;
+}
+
+.description {
+    background-color: #232121;
+    color: white;
+}
+
+.mission {
+    text-align: center;
+    font-weight: 300;
+    padding-bottom: 30px;
+}
+
+.footer {
+    text-align: center;
+    padding-top: 30px;
+}
