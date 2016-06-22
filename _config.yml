@@ -9,5 +9,9 @@ url: "https://thewhitehat.club"
 # Build settings
 markdown: kramdown
 
+compress_html:
+  clippings: all
+  comments: all
+
 sass:
-    style: compressed
+  style: compressed
