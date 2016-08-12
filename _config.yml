@@ -16,4 +16,5 @@ compress_html:
   comments: all
 
 sass:
+  sass_dir: _sass
   style: compressed
