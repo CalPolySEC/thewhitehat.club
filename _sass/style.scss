@@ -117,3 +117,12 @@ input[type=submit] {
     font-size: inherit;
     padding: 8px 15px;
 }
+
+/* Calendar */
+iframe {
+    border: 0;
+    height: 500px;
+    margin: 0 auto;
+    width: 80%;
+    display: block;
+}
