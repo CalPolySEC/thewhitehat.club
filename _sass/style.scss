@@ -65,6 +65,10 @@ body {
     color: white;
 }
 
+.description + .description {
+    margin-top: -1px;
+}
+
 .mission {
     text-align: center;
     font-weight: 300;
