@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="980" height="551">
+  <style>
+    text {
+      font-family: -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif;
+    }
+    circle {
+      fill: #444;
+    }
+    circle + g {
+      display: none;
+    }
+    circle:hover {
+      fill: #4078c0;
+    }
+    circle:hover + g {
+      display: inline;
+    }
+    rect, polygon {
+      fill: #333;
+    }
+    line {
+      stroke: #eee;
+    }
+    .day-name {
+      fill: #555;
+      font-size: 14px;
+    }
+    .label {
+      font-size: 12px;
+      font-weight: 600;
+    }
+    .value {
+      fill: #ddd;
+      font-size: 12px;
+    }
+  </style>
+  {%- for day in ('Sunday', 'Monday', 'Tuesday', 'Wednesday',
+                  'Thursday', 'Friday', 'Saturday') %}
+  <g transform="translate(0, {{ 40 + 67 * loop.index0 }})">
+    <line x1="0" y1="60" x2="980" y2="60"></line>
+    <text class="day-name" dy="30">{{ day }}</text>
+    {%- set dayloop = loop %}
+    {%- for hour in range(24) %}
+    {%- set datum = data[dayloop.index0 * 24 + loop.index0] %}
+    {%- set radius = 16 * radii[dayloop.index0 * 24 + loop.index0] %}
+    <g transform="translate({{ 110 + 36 * hour }}, 0)">
+      <line x1="0" y1="50" x2="0" y2="60"></line>
+      <circle r="{{ radius }}" cy="25"></circle>
+      <g class="tooltip" transform="translate(0, {{ 25 - radius }})">
+        <rect x="-30" y="-48" height="38" width="60" rx="3" ry="3"></rect>
+        <polygon points="-5 -11 0 -5 5 -11"></polygon>
+        <text text-anchor="middle" class="value" transform="translate(0, -24)">
+          {{ (datum * 100) | round | int }}%
+        </text>
+      </g>
+    </g>
+    {%- endfor %}
+  </g>
+  {%- endfor %}
+  {%- for hour in range(24) %}
+  <text text-anchor="middle" class="label" transform="translate({{ 110 + 36
+  * hour }}, 531)">
+    {{ (hour - 1) % 12 + 1 }}{% if hour < 12 %}a{% else %}p{% endif %}
+  </text>
+  {%- endfor %}
+</svg>
