@@ -1,0 +1,126 @@
+@font-face {
+  font-family: 'HK Grotesk';
+  font-weight: 400;
+  src: url('/fonts/HKGrotesk-Medium.otf'); }
+
+  @font-face {
+    font-family: 'HK Grotesk';
+    font-weight: 500;
+    src: url('/fonts/HKGrotesk-Bold.otf'); }
+
+    @font-face {
+      font-family: 'HK Grotesk';
+      font-weight: 300;
+      src: url('/fonts/HKGrotesk-Light.otf'); }
+
+      html, body {
+        padding: 0px;
+        margin: 0px;
+        color: #232121; }
+
+        body {
+          font-family: 'HK Grotesk', 'Helvetica', 'Arial', sans-serif; }
+
+          .navbar {
+            font-weight: 400;
+            text-align: center; }
+
+            .navbar > a {
+              color: inherit;
+              display: inline-block;
+              height: 23px;
+              margin: 0 35px;
+              text-decoration: none; }
+
+              .logo {
+                display: block;
+                float: right;
+                padding-top: 30px;
+                padding-right: 30px; }
+
+                .a {
+                  fill: #fff; }
+
+                  .b {
+                    fill: #232121; }
+
+                    .c {
+                      fill: #898989; }
+
+                      .logo-desc {
+                        margin-left: 30px;
+                        margin-top: 120px;
+                        max-width: 300px;
+                        font-size: 30px;
+                        font-weight: 300; }
+
+                        .description {
+                          background-color: #232121;
+                          color: white; }
+
+                          .mission {
+                            text-align: center;
+                            font-weight: 300;
+                            padding-bottom: 30px; }
+
+                            .footer {
+                              text-align: center;
+                              padding-top: 30px; }
+
+                              .form-wrap {
+                                background-color: #232121;
+                                padding: 40px 0; }
+
+                                .form {
+                                  background-color: #fff;
+                                  border-radius: 3px;
+                                  margin: 0 auto;
+                                  padding: 20px 0 20px 20px;
+                                  position: relative;
+                                  width: 400px; }
+
+                                  .form h2 {
+                                    margin: 0 0 40px 0;
+                                    text-align: center; }
+
+                                    .timecard {
+                                      border: 0;
+                                      display: block;
+                                      height: 551px;
+                                      margin: 0 auto;
+                                      width: 980px; }
+
+                                      .timecard-links {
+                                        margin: 20px auto 0;
+                                        text-align: center; }
+
+                                        .timecard-links > a {
+                                          color: #555;
+                                          margin: 0 5px; }
+
+                                          label {
+                                            display: block;
+                                            padding: 0 0 20px 0;
+                                            position: relative; }
+
+                                            input[type=email], input[type=text] {
+                                              padding: 4px;
+                                              position: absolute;
+                                              right: 20px; }
+
+                                              input[type=submit] {
+                                                background-color: #232121;
+                                                border: 0;
+                                                border-radius: 3px;
+                                                color: #fff;
+                                                cursor: pointer;
+                                                font-family: inherit;
+                                                font-size: inherit;
+                                                padding: 8px 15px; }
+
+                                                iframe {
+                                                  border: 0;
+                                                  height: 500px;
+                                                  margin: 0 auto;
+                                                  width: 80%;
+                                                  display: block; }

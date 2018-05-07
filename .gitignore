@@ -1,3 +1,14 @@
-_site
-.sass-cache
-.jekyll-metadata
+# Editor Specific Git Ignores
+.vscode
+
+# Virtual Env Git Ignores
+include
+bin
+lib/
+.Python
+
+# Test Specific Git Ignores
+seclab.log
+
+# Python Git Ignores
+*.pyc
