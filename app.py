@@ -29,6 +29,10 @@ def calendar():
 def signup():
    return render_template('signup.html')
 
+@app.route('/videos')
+def videos():
+    return render_template('videos.html')
+
 @app.route('/<file_name>.txt')
 def method_name(file_name):
     return app.send_static_file(file_name + '.txt')
