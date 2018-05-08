@@ -15,7 +15,8 @@ log_file = MemoizedFile(os.environ.get('BADGE_LOG_PATH', 'seclab.log'))
 app_dir = os.path.dirname(os.path.abspath(__file__))
 asset_dir = os.path.join(app_dir, "assets")
 static_dir = os.path.join(app_dir, "static")
-Scss(app, static_dir=static_dir, asset_dir=asset_dir)
+scss_compiler = Scss(app, static_dir='static', asset_dir='assets', load_paths=None)
+scss_compiler.update_scss()
 
 @app.route('/')
 def home():
@@ -46,4 +47,4 @@ def timecard_image():
     return Response(contents, mimetype='image/svg+xml')
 
 if __name__ == '__main__':
-    app.run(debug=True, host='127.0.0.1', port=5000)
+    app.run(debug=True, host='0.0.0.0', port=3000)

@@ -1,25 +1,11 @@
-@font-face {
-    font-family: 'HK Grotesk';
-    font-weight: 400;
-    src: url('static/fonts/HKGrotesk-Medium.otf');
-}
-
-@font-face {
-    font-family: 'HK Grotesk';
-    font-weight: 500;
-    src: url('static/fonts/HKGrotesk-Bold.otf');
-}
-
-@font-face {
-    font-family: 'HK Grotesk';
-    font-weight: 300;
-    src: url('static/fonts/HKGrotesk-Light.otf');
-}
+@import 'colors';
+@import 'fonts';
+@import 'logo';
 
 html, body {
     padding: 0px;
     margin: 0px;
-    color: #232121;
+    color: $dark-bg-color;
 }
 
 body {
@@ -46,12 +32,6 @@ body {
     padding-right: 30px;
 }
 
-
-// Logo colors
-.a { fill: #fff; }
-.b { fill: #232121; }
-.c { fill: #898989; }
-
 .logo-desc{
     margin-left: 30px;
     margin-top: 120px;
@@ -61,8 +41,8 @@ body {
 }
 
 .description {
-    background-color: #232121;
-    color: white;
+    background-color: $dark-bg-color;
+    color: $light-text-color;
 }
 
 .description + .description {
@@ -81,12 +61,12 @@ body {
 }
 
 .form-wrap {
-    background-color: #232121;
+    background-color: $dark-bg-color;
     padding: 40px 0;
 }
 
 .form {
-    background-color: #fff;
+    background-color: $light-text-color;
     border-radius: 3px;
     margin: 0 auto;
     padding: 20px 0 20px 20px;
@@ -113,7 +93,7 @@ body {
 }
 
 .timecard-links > a {
-    color: #555;
+    color: $link-color;
     margin: 0 5px;
 }
 
@@ -130,7 +110,7 @@ input[type=email], input[type=text] {
 }
 
 input[type=submit] {
-    background-color: #232121;
+    background-color: $dark-bg-color;
     border: 0;
     border-radius: 3px;
     color: #fff;
