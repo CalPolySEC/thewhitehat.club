@@ -1,34 +1,34 @@
 # thewhitehat.club
 
-This is a [Flask](http://flask.pocoo.org) app to run [thewhitehat.club](thewhitehat.club)
+This is a [Flask](http://flask.pocoo.org) app to run [https://thewhitehat.club](https://thewhitehat.club)
 
-===================
+----
 
-## Running the app
+## Running the App (Development)
 
-To run the site, install virtualenv on your machine with
+1. To run the site, install virtualenv on your machine with:
 
 ```bash
 pip3 install vitualenv
 ```
 
-create a new virtualenv in the root of the git repository and activate it with 
+2. Create a new virtualenv in the root of the git repository and activate it with :
 
 ```bash
 virtualenv .
 source bin/activate
 ```
 
-install the required pip packages with
+3. Install the required pip packages with
 
 ```bash
 pip3 install -r requirements.txt
 ```
 
-And finally, run the app with
+4. And finally, run the app with
 
 ```bash
 python3 app.py
 ```
 
-then go to [localhost:5000](localhost:5000)
+5. Visit [localhost:3000](localhost:3000) to view the site running locally.
