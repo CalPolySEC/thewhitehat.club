@@ -33,42 +33,34 @@ if e is not None:
 
 @app.route('/')
 def home():
-    scss_compiler.update_scss() # REMOVE BEFORE FINAL COMMIT
     return render_template('index.html')
 
 @app.route('/about')
 def about():
-    scss_compiler.update_scss() # REMOVE BEFORE FINAL COMMIT
     return render_template('about.html')
 
 @app.route('/officers')
 def officers():
-    scss_compiler.update_scss() # REMOVE BEFORE FINAL COMMIT
     return render_template('officers.html')
 
 @app.route('/resources')
 def resources():
-    scss_compiler.update_scss() # REMOVE BEFORE FINAL COMMIT
     return render_template('resources.html')
 
 @app.route('/videos')
 def videos():
-    scss_compiler.update_scss() # REMOVE BEFORE FINAL COMMIT
     return render_template('videos.html')
 
 @app.route('/calendar')
 def calendar():
-    scss_compiler.update_scss() # REMOVE BEFORE FINAL COMMIT
     return render_template('calendar.html')
 
 @app.route('/signup')
 def signup():
-    scss_compiler.update_scss() # REMOVE BEFORE FINAL COMMIT
     return render_template('signup.html')
 
 @app.route('/visit')
 def visit():
-    scss_compiler.update_scss() # REMOVE BEFORE FINAL COMMIT
     return render_template('visit.html')
 
 @app.route('/<file_name>.txt')
@@ -106,7 +98,6 @@ def js(file_name):
 
 @app.route('/offline')
 def offline():
-    scss_compiler.update_scss() # REMOVE BEFORE FINAL COMMIT
     out = render_template('offline.html')
     
     f = open('static/offline.html', 'w').write(out)
@@ -122,7 +113,6 @@ def sw():
 
 @app.route('/timecard')
 def timecard():
-    scss_compiler.update_scss() # REMOVE BEFORE FINAL COMMIT
     return render_template('timecard.html')
 
 @app.route('/timecard.svg')
