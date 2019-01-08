@@ -1,5 +1,9 @@
 /* TEAM */
 
+  Name: Jon Prentice
+  Site: https://github.com/jon77p
+  Location: San Luis Obispo
+
   Name: Kent Kawahara
   Site: https://github.com/thewells1024
   Location: San Luis Obispo

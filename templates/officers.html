@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% block body %}
+    <div class="content">
+        <div class="content" id="landing-bg"></div>
+        <div class="officer-container">
+                <div class="officer-logo">
+                    {% include 'includes/logo.svg' %}
+                </div>
+                <div class="officers">
+                    <div class="officers-left">
+                        {% for i in range(0, officer_process()|length // 2) %}
+                        <div class="officer-item">
+                            <img height: inherit src="/officers-{{ officer_process()[i]['image'] }}">
+                            <div>
+                                <h3><strong>{{ officer_process()[i]['position'] }}</strong></h3>
+                                <h4>{{ officer_process()[i]['name'] }}</h4>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                    <div class="officers-right">
+                        {% for i in range(officer_process()|length // 2, officer_process()|length) %}
+                        <div class="officer-item">
+                            <img height: inherit src="/officers-{{ officer_process()[i]['image'] }}">
+                            <div>
+                                <h3><strong>{{ officer_process()[i]['position'] }}</strong></h3>
+                                <h4>{{ officer_process()[i]['name'] }}</h4>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+    </div>
+{% endblock %}

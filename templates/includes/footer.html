@@ -1,16 +1,63 @@
 <!--FOOTER-->
-<div class="row footer">
-    <div class="col-4">
-        <h3>Questions?</h3>
-        <a href="mailto:thewhitehat@calpoly.edu">email us</a>
-    </div>
-    <div class="col-4">
-        <p>Bonderson (197) -204</p>
-        <a href="/timecard">
-            <img src="{% if config.DEBUG %}https://thewhitehat.club{% endif %}/status.svg" height="36px">
-        </a>
-    </div>
-    <div class="col-4">
-        <p><a href="https://www.facebook.com/groups/whitehatcalpoly/">Join our facebook group</a></p>
-    </div>
-</div>
+    <footer>
+        <div id="footer-left">
+            <div>
+                <p>Visit our lab!</p>
+                <a href="/visit">Bonderson (197) - 204</a>
+            </div>
+        </div>
+        <div id="footer-center">
+            <div>
+                <a id="ctftime" href="https://ctftime.org/team/8754/" rel="nofollow noopener" target="_blank">
+                    <p>CTFtime</p>
+                    <img src="/ctftime-logo.png" border="0" alt="Join us on CTFtime!"/>
+                </a>
+                <a id="status" href="/timecard">
+                    <img src="{% if config.DEBUG %}https://thewhitehat.club{% endif %}/status.svg">
+                </a>
+                <a id="facebook" href="https://facebook.com/groups/whitehatcalpoly/" target="_blank">
+                    <p>Facebook</p>
+                    <img src="/facebook.png" height="36px" alt="Visit our Facebook page!">
+                </a>
+            </div>
+        </div>
+        <div id="footer-right">
+            <div>
+                <p>Questions?<br>
+                <a href="mailto:thewhitehat@calpoly.edu">Email Us</a></p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- SERVICEWORKER JS -->
+    <script src="/promise.js"></script>
+    <script src="/fetch.js"></script>
+    <script src="/app.js"></script>
+
+    <script>
+        //iOS Mobile Scaling
+
+        // First we get the viewport height and we multiple it by 1% to get a value for a vh unit
+        let vh = window.innerHeight * 0.01;
+        // Then we set the value in the --vh custom property to the root of the document
+        document.documentElement.style.setProperty('--vh', `${vh}px`);
+    </script>
+
+    <!-- Navbar Menu Toggle for Mobile -->
+    <script>
+        function navMenu() {
+            var x = document.getElementsByClassName("nav");
+            var i;
+            for (i = 1; i < x.length - 1; i++) {
+                if ((x[i].childNodes[0].className === "brand") || (x[i].childNodes[0].className === "icon")) {
+                    continue
+                } else {
+                    if (x[i].className === "nav") {
+                        x[i].className += " mobile";
+                    } else {
+                        x[i].className = "nav";
+                    }
+                }
+            }
+        }
+    </script>

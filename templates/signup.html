@@ -1,19 +1,25 @@
 {% extends 'base.html' %}
 {% block body %}
-    <div class="form-wrap">
-        <form action="https://thewhitehat.us9.list-manage.com/subscribe/post?u=3d8e0978450962204eedce576&amp;id=a0fbf62a0c" method="POST" target="_blank" class="form">
-            <h2>Sign up for our mailing list</h2>
-            <label>Email Address *
-                <input type="email" name="EMAIL" required>
-            </label>
-            <label>First Name
-                <input type="text" name="FNAME">
-            </label>
-            <label>Last Name
-                <input type="text" name="LNAME">
-            </label>
-            <input type="submit" value="Subscribe" name="subscribe">
-        </form>
+    <div class="content">
+        <div class="content" id="landing-bg"></div>
+        <div class="form-wrap">
+            <div id="wh-logo">
+                    {% include 'includes/logo.svg' %}
+            </div>
+            <form action="https://thewhitehat.us9.list-manage.com/subscribe/post?u=3d8e0978450962204eedce576&amp;id=a0fbf62a0c" method="POST" target="_blank" class="form">
+                <h2>Sign up for our mailing list</h2>
+                <label>Email Address <span style="color: red">*</span>
+                    <input type="email" name="EMAIL" required>
+                </label>
+                <label>First Name <span style="color: red">*</span>
+                    <input type="text" name="FNAME" required>
+                </label>
+                <label>Last Name <span style="color: red">*</span>
+                    <input type="text" name="LNAME" required>
+                </label>
+                <input type="submit" value="Subscribe" name="subscribe">
+                <a id="mailchimp" href="https://mailchimp.com" target="__blank">Powered by <object type="image/svg+xml" data="https://upload.wikimedia.org/wikipedia/commons/e/e4/MailChimp.svg"></object></a>
+            </form>
+        </div>
     </div>
-      
 {% endblock %}

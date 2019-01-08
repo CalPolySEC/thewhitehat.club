@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block body %}
+    <div class="content">
+        <div class="content" id="landing-bg"></div>
+        <div class="about-container">
+            <div class="about-content">
+                <div class="groupimg-head">
+                    <img src="/groupclub.jpg" id="full-groupimg">
+                    <div id="groupimg-blurred"></div>
+                </div>
+                {% for i in get_aboutinfo() %}
+                <div class="about-section">
+                    <div>
+                        <h1>{{ i }}</h1>
+                        {% for j in range(0, get_aboutinfo()[i]|length) %}
+                        <h2>{{  get_aboutinfo()[i][j]["phrase"]|safe }}</h2>
+                        <p>{{ get_aboutinfo()[i][j]["description"]|safe }}</p>
+                        {% endfor %}
+                    </div>
+                </div>
+                {% endfor %}
+                <div id="officer-groupimg">
+                    <img src="/officers-group.jpg">
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

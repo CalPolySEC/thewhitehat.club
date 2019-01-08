@@ -1,4 +1,5 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="980" height="551">
+<!-- <svg xmlns="http://www.w3.org/2000/svg" width="980" height="551"> -->
+<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 980 600" perserveAspectRatio="xMinYMin meet">
   <style>
     text {
       font-family: -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif;

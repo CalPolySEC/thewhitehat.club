@@ -1,11 +1,19 @@
 {% extends 'base.html' %}
 {% block body %}
-<div class="timecard-links">
-	<a href="/timecard.svg" target="timecard">All Time</a>
-  | <a href="/timecard.svg?start=2017-09-14&end=2017-12-31" target="timecard">Fall 2017</a>
-  | <a href="/timecard.svg?start=2018-01-01&end=2018-03-23" target="timecard">Winter 2018</a>
-  | <a href="/timecard.svg?start=2018-04-02&end=2018-06-15" target="timecard">Spring 2018</a>
-  | <a href="/timecard.svg?start=2018-09-13&end=2018-12-16" target="timecard">Fall 2018</a>
-</div>
-<iframe name="timecard" class="timecard" src="/timecard.svg"></iframe>
+    <div class="content">
+        <div class="content" id="landing-bg"></div>
+        <div class="timecard-container">
+            <div class="timecard-content">
+                <div class="timecard-links">
+                    <a href="/timecard.svg" target="timecard">All Time</a>
+                    {% for i in range(0, get_timecarddates()|length) %}
+                    | <a href="/timecard.svg?start={{ get_timecarddates()[i]['start'] }}&end={{ get_timecarddates()[i]['end'] }}" target="timecard">{{ get_timecarddates()[i]['quarter'] }}</a>
+                    {% endfor %}
+                </div>
+                <div class="timecard">
+                    <object id="timecardframe" name="timecard" type="image/svg+xml" data="/timecard.svg"></object>
+                </div>
+            </div>
+        </div>
+    </div>
 {% endblock %}

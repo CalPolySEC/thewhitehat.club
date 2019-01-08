@@ -1,0 +1,92 @@
+@import 'style';
+#calpoly-bg {
+    background: url("/calpoly.png") no-repeat center center fixed;
+    background-size: cover;
+    background-position: bottom right;
+    filter: blur(7px);
+    -webkit-filter: blur(7px);
+    z-index: -1;
+    transform: scale(1.1);
+    height: calc(100vh - 2 * 7vh);
+}
+
+.dark-bar {
+    position: fixed;
+    top: $menu-height;
+    width: 100vw;
+    
+    background: $dark-bg-color;
+    color: $light-text-color;
+    text-align: center;
+    $welcome-size: 5em;
+
+    filter: drop-shadow(10px 10px 15px gray);
+
+    transition: all 0.75s;
+}
+
+.lab-content {
+    position: absolute;
+    width: 100%;
+    height: 50%;
+    // CSS Grid
+    display: grid;
+    grid-template-columns: 1fr 3fr 1fr;
+
+    // Rollover Animation
+    transition: all 0.75s;
+
+    .lab-l {
+        // CSS Grid
+        display: grid;
+        grid-template-rows: 1fr 1fr;
+        
+        #lab-img-ul {
+            height: 250px; width: 250px;
+            height: 100%;
+            width: 100%;
+            background-image: url('/lab3.jpg');
+            background-clip: border-box;
+            background-position-y: center;
+            background-position-x: center;
+            background-size: cover;
+        }
+        
+        #lab-img-bl {
+            height: 250px; width: 250px;
+            height: 100%;
+            width: 100%;
+            background-image: url('/lab2.jpg');
+            background-clip: border-box;
+            background-position-x: center;
+            background-size: cover;
+        }
+    }
+    
+    .lab-r {
+        // CSS Grid
+        display: grid;
+        grid-template-rows: 1fr 1fr;
+        
+        #lab-img-ur {
+            height: 250px; width: 250px;
+            height: 100%;
+            width: 100%;
+            background-image: url('/lab1.jpg');
+            background-clip: border-box;
+            background-position-x: right;
+            background-size: cover;
+        }
+        
+        #lab-img-br {
+            height: 250px; width: 250px;
+            height: 100%;
+            width: 100%;
+            background-image: url('/lab4.jpg');
+            background-clip: border-box;
+            background-position-x: right;
+            background-size: cover;
+
+        }
+    }
+}

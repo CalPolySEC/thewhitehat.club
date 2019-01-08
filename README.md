@@ -31,4 +31,4 @@ pip3 install -r requirements.txt
 python3 app.py
 ```
 
-5. Visit [localhost:3000](localhost:3000) to view the site running locally.
+5. Visit [0.0.0.0:3000](0.0.0.0:3000) to view the site running locally.

@@ -5,10 +5,16 @@
 include
 bin
 lib/
+share/
+local/
 .Python
+tox.ini
 
 # Test Specific Git Ignores
 seclab.log
 
 # Python Git Ignores
 *.pyc
+
+# Website Ignores
+static/css

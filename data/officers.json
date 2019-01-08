@@ -1,0 +1,62 @@
+{
+    "president": {
+        "position": "President",
+        "name": "Kylan Stewart",
+        "image": "kylan.jpg"
+    },
+    "vp": {
+        "position": "Vice President",
+        "name": "Nicole Anderson-Au",
+        "image": "nicole.jpg"
+    },
+    "archivist": {
+        "position": "Archivist",
+        "name": "Jennifer Maunder",
+        "image": "jennifer.jpg"
+    },
+    "corpliason": {
+        "position": "Corporate Liaison",
+        "name": "Justin Engwall",
+        "image": "justin.jpg"
+    },
+    "public": {
+        "position": "Publicity",
+        "name": "Austin Shin",
+        "image": "austin.jpg"
+    },
+    "treasurer": {
+        "position": "Treasurer",
+        "name": "Ethan Goldfarb",
+        "image": "ethan.jpg"
+    },
+    "ctfmaster": {
+        "position": "CTF Master",
+        "name": "Sarah Samora",
+        "image": "sarah.jpg"
+    },
+    "assistantctf": {
+        "position": "Assistant CTF Master",
+        "name": "Donnie Sanchez",
+        "image": "donnie.jpg"
+    },
+    "social": {
+        "position": "Social Chair",
+        "name": "Veronica Pollock",
+        "image": "veronica.jpg"
+    },
+    "hardware": {
+        "position": "Hardware Outreach",
+        "name": "Thomas Garcia",
+        "image": "thomas.jpg"
+    }, 
+    "webmaster": {
+        "position": "Web Master",
+        "name": "Jon Prentice",
+        "image": "jon.jpg"
+    },
+    "sysadmin": {
+        "position": "SysAdmin",
+        "name": "Stephen Parkinson",
+        "image": "stephen.jpg"
+    }
+}

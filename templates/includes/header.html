@@ -8,10 +8,39 @@
     <meta name="viewport" content="width=device-width,minimum-scale=0.5,initial-scale=0.5" />
     <!-- <meta name="description" content="" /> -->
   
-    <link rel="icon" type="image/png" href="/static/images/favicon-32x32.png" sizes="32x32" />
-    <link rel="icon" type="image/png" href="/static/images/favicon-16x16.png" sizes="16x16" />
+    <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16" />
     <link rel="canonical" href="{{ config.url }}" />
     <link rel="author" href="/humans.txt" />
   
-    <link rel="stylesheet" type="text/css" href="/static/css/default.css" />
+    <!-- per-page css -->
+    {%- if request.path == "/" %}
+    <link rel="stylesheet" type="text/css" href="/home.css" />
+    {%- elif request.path == "/about" %}
+    <link rel="stylesheet" type="text/css" href="/about.css" />
+    {%- elif request.path == "/calendar" %}
+    <link rel="stylesheet" type="text/css" href="/calendar.css" />
+    {%- elif request.path == "/videos" %}
+    <link rel="stylesheet" type="text/css" href="/videos.css" />
+    {%- elif request.path == "/officers" %}
+    <link rel="stylesheet" type="text/css" href="/officers.css" />
+    {%- elif request.path == "/resources" %}
+    <link rel="stylesheet" type="text/css" href="/resources.css" />
+    {%- elif request.path == "/signup" %}
+    <link rel="stylesheet" type="text/css" href="/mailing.css" />
+    {%- elif request.path == "/timecard" %}
+    <link rel="stylesheet" type="text/css" href="/timecard.css" />
+    {%- elif request.path == "/visit" %}
+    <link rel="stylesheet" type="text/css" href="/visit.css" />
+    {%- else %}
+    <link rel="stylesheet" type="text/css" href="/style.css" />
+    {% endif %}
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    {%- if request.path == "/" %}
+    <!-- notification js -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="/notify.js"></script>
+    {% endif %}
 </head>

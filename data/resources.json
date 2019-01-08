@@ -1,0 +1,118 @@
+{
+    "Tools": [
+        {
+            "name": "White Hat Curated CTF Tools",
+            "link": "https://github.com/WhiteHatCP/ctf-tools",
+            "description": "a Github repo containing many commonly used tools for solving CTF challenges."
+        },
+        {
+            "name": "VMware Workstation/Fusion",
+            "link": "https://vmware.com",
+            "description": "a powerful virtualization hypervisor program that enables complete Operating System recreation within a virtual environment on a host machine (Download for free from <a href='https://e5.onthehub.com/WebStore/ProductsByMajorVersionList.aspx?cmi_mnuMain_child=d716efd1-824f-e511-940f-b8ca3a5db7a1&cmi_mnuMain=2862fcc3-9da9-e511-9413-b8ca3a5db7a1&ws=84c5e543-6fb6-e311-93fb-b8ca3a5db7a1&vsro=8' target='_blank'>OnTheHub</a>!)"
+        },
+        {
+            "name": "Kali Linux",
+            "link": "https://kali.org",
+            "description": "a Debian-based Linux distro containing numerous tools and resources designed for digital forensics and penetration testing."
+        },
+        {
+            "name": "Metasploit Framework",
+            "link": "https://metasploit.com",
+            "description": "a penetration testing framework written in Ruby and uses numerous modules to create basic and advanced payloads for vulnerability discovery and security awareness and defense."
+        },
+        {
+            "name": "CyberChef",
+            "link": "https://gchq.github.io/CyberChef",
+            "description": "a simple, modular, and intuitive web app for analyzing and decoding data easily and quickly."
+        },
+        {
+            "name": "Radare2",
+            "link": "https://github.com/radare/radare2",
+            "description": "a complete framework for reverse-engineering and analyzing binaries, all designed to be ran from the command-line."
+        },
+        {
+            "name": "GDB",
+            "link": "https://gnu.org/s/gdb",
+            "description": "the GNU Project Debugger allows you to debug another program while it is running on a system."
+        },
+        {
+            "name": "ltrace",
+            "link": "http://man7.org/linux/man-pages/man1/ltrace.1.html",
+            "description": "a Linux debugging utility that displays trace calls made by userspace applications/programs/binaries to shared libraries in order to facilitate reverse-engineering and debugging processes."
+        },
+        {
+            "name": "Burp Suite",
+            "link": "https://portswigger.net/burp/communitydownload",
+            "description": "a suite of networking tools, useful for capturing and modifying local network packets."
+        },
+        {
+            "name": "Netcat",
+            "link": "http://netcat.sourceforge.net",
+            "description": "a computer networking utility to read and write to network connections using TCP or UDP (a helpful cheat sheet from SANS can be found <a href='https://sans.org/security-resources/sec560/netcat_cheat_sheet_v1.pdf' target='_blank'>here</a>!)"
+        },
+        {
+            "name": "dd",
+            "link": "http://man7.org/linux/man-pages/man1/dd.1.html",
+            "description": "a Linux command-line utility that can convert and copy files between different formats."
+        },
+        {
+            "name": "strings",
+            "link": "http://man7.org/linux/man-pages/man1/strings.1.html",
+            "description": "a Linux command-line utility that prints the printable character sequences that are at least 4 characters long in a format that is easily modifiable and scriptable."
+        },
+        {
+            "name": "binwalk",
+            "link": "https://github.com/ReFirmLabs/binwalk",
+            "description": "a tool for searching through binary files for embedded files and executable code."
+        },
+        {
+            "name": "Xortool",
+            "link": "https://github.com/hellman/xortool",
+            "description": "a Python tool that performs xor analysis on a given file."
+        }
+    ],
+    "Useful Links": [
+        {
+            "name": "CTFtime",
+            "link": "https://ctftime.org/team/8754",
+            "description": "the official link to our CTF team! Click to view how we've been doing!"
+        },
+        {
+            "name": "Slack",
+            "link": "https://hashslinginghackers.slack.com",
+            "description": "join our Slack to stay up-to-date on our CTF events and communications!"
+        },
+        {
+            "name": "OnTheHub",
+            "link": "https://calpoly.onthehub.com/",
+            "description": "calpoly"
+        },
+        {
+            "name": "Cyber Threat Map",
+            "link": "https://cybermap.kaspersky.com",
+            "description": "a real-time visualization of cyber attacks and malware threats as they are detected by Kaspersky Anti-Virus solutions."
+        },
+        {
+            "name": "ImmersiveLabs Cyber Academy",
+            "link": "https://dca.immersivelabs.online",
+            "description": "an online cybersecurity training platform that has a wide range of modules teaching penetration testing skills, reverse engineering skills, CTF-solving techniques, and more! (free access with your Cal Poly email!)"
+        },
+        {
+            "name": "OverTheWire Wargames",
+            "link": "http://overthewire.org/wargames",
+            "description": "a series of online CTF-training challenges designed to help you learn and practice security concept (if you haven't done CTFs before, try the <a href='http://overthewire.org/wargames/bandit' target='_blank'>Bandit</a> challenges!)"
+        },
+        {
+            "name": "VulnHub",
+            "link": "https://www.vulnhub.com/",
+            "description": "a system of challenges stored within virtual machines that allow anyone to gain practical 'hands-on' experience in digital security, computer software & network administration."
+        }
+    ],
+    "Cool Security Books": [
+        {
+            "name": "Practical Malware Analysis (PMA)",
+            "link": "https://www.amazon.com/Practical-Malware-Analysis-Hands-Dissecting/dp/1593272901/ref=sr_1_1?ie=UTF8&qid=1546130408&sr=8-1&keywords=practical+malware+analysis",
+            "description": "the industry-standard on teaching basic and advanced malware analysis tools and techniques! Highly recommended if you want to learn how to safely analyze malware, reverse engineer, debug, and disassemble malicious software, and more! (applies to Windows-based malware and virus samples)"
+        }
+    ]
+}

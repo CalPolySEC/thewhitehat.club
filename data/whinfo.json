@@ -1,0 +1,34 @@
+{
+    "Who We Are": [
+        {
+            "phrase": "<em>White Hat</em>",
+            "description": "We are a group of security-oriented individuals who strive to code, execute, and live with a focus on implementing concepts of security through everything. As a club, we strive to make cybersecurity concepts and ethical hacking practices and training available and accessible to everyone."
+        },
+        {
+            "phrase": "<em>Ethical Hackers</em>",
+            "description": "Whether in digital hacking, hardware hacking/teardowns, penetration testing activities, malware analysis endeavors, or proof-of-concept demos, we strive to always pursue the highest degree of ethical motivations in our decisions to push the boundaries of hacking at Cal Poly and within society."
+        },
+        {
+            "phrase": "<em>Security Enthusiasts</em>",
+            "description": "We are driven by our passion to '<em>hack all the things</em>' and use secure practices in all areas of our lives: whether digitally or physically."
+        }
+    ],
+    "Frequently Asked Questions": [
+        {
+            "phrase": "Isn't hacking illegal?",
+            "description": "Depends what type of hacking! There are <b>three</b> main categories of \"hackers\": <em>Black Hat</em> hackers who are very malicious in intent, <em>White Hat</em> hackers who ethically disclose their intents to companies, and <em>Grey Hat</em> Hackers who are in between the two and are more difficult to know if their actions are legal all the time.<br>If you're not sure about which category your actions fit into, first disclose your intentions, and most importantly, do the legal thing!"
+        },
+        {
+            "phrase": "I'm not in Computer Science/Software Engineering, why would I like White Hat?",
+            "description": "We have many members who are in different majors apart from computing-related majors! Starting from our talks to our Capture-The-Flag Hacking Challenges, we approach everything with a no-knowledge assumed mentality. We also ensure that there's always someone who can help, and our officers are super friendly and willing to help anyone!"
+        },
+        {
+            "phrase": "Do you do anything besides cybersecurity?",
+            "description": "Definitely! We hold many fun and social events throughout the year, including our annual Donut Walk to <a href='https://slodoco.com' target='_blank'>SloDoCo</a> at the start of every fall quarter, our board game nights and movie nights, our annual <a href=\"https://ifixit.com\" target=\"_blank\">iFixit</a> Triathlon event in spring quarter, and much more!\nFor more information, join our <a href=\"https://facebook.com/groups/whitehatcalpoly/\" target=\"_blank\">Facebook group</a>!"
+        },
+        {
+            "phrase": "Aren't hackers super secretive/antisocial/etc.?",
+            "description": "Totally not, people are all very different and have different feelings towards social interactions in general. At <em>White Hat</em>, everyone is welcome! We make no assumptions about how people are, and we want everyone to be included. If you're looking for some super cool people to hang out with and befriend, come visit our lab in <a href='/visit'>Bonderson room 204</a>!<br>RG8geW91IEdFVCB0aGlzIFVSTD8="
+        }
+    ]
+}

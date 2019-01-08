@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block body %}
+    <div class="content">
+        <div class="content" id="landing-bg"></div>
+        <div class="resources-container">
+            <div class="wh-logo">
+                {% include 'includes/logo.svg' %}
+            </div>
+            <div class="resources-body">
+                {% for i in get_resources() %}
+                <div class="resources-group">
+                    <h2>{{ i }}</h2>
+                    <ul>
+                        {% for j in range(0, get_resources()[i]|length) %}
+                        <li><a href="{{ get_resources()[i][j]['link'] }}" target="_blank">{{ get_resources()[i][j]['name'] }}</a>: {{ get_resources()[i][j]['description']|safe }}</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+{% endblock %}

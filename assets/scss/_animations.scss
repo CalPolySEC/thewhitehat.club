@@ -1,0 +1,8 @@
+@mixin hover($duration: 0.75s, $scale: 1.1) {
+    transition: all $duration;
+    
+    &:hover {
+        transform: scale($scale);
+        overflow: hidden;
+    }
+}

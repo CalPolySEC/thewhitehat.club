@@ -1,0 +1,22 @@
+@import 'style';
+/* Calendar */
+#landing-bg {
+    background: url('/lab4.jpg')  no-repeat center center fixed;
+    background-size: cover;
+    height: calc(100vh - 2 * 7vh);
+}
+
+iframe {
+    position: absolute;
+    z-index: 1;
+    border: 0;
+    height: 75vh;
+    margin: 0 auto;
+    width: 80vw;
+    display: block;
+
+    box-shadow: 0px 0px 10px #afc0d9;
+    background-color: #fff;
+    padding: 0.1em;
+    border-radius: .25rem;
+}

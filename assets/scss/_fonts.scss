@@ -1,17 +1,29 @@
 @font-face {
 	font-family: 'HK Grotesk';
 	font-weight: 400;
-	src: url('/fonts/HKGrotesk-Medium.otf');
+	src: url('/HKGrotesk-Medium.otf');
 }
 
 @font-face {
     font-family: 'HK Grotesk';
     font-weight: 500;
-    src: url('/fonts/HKGrotesk-Bold.otf');
+    src: url('/HKGrotesk-Bold.otf');
 }
 
 @font-face {
     font-family: 'HK Grotesk';
     font-weight: 300;
-    src: url('/fonts/HKGrotesk-Light.otf');
+    src: url('/HKGrotesk-Light.otf');
+}
+
+@font-face {
+    font-family: 'Farray';
+    font-weight: 400;
+    src: url('/Farray.otf');
+}
+
+@font-face {
+    font-family: 'Modeka';
+    font-weight: 400;
+    src: url('/Modeka.otf');
 }
