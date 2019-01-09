@@ -199,7 +199,7 @@ def utility_processor():
             res = []
             for i in request['items']:
                 d = {}
-                splits = re.split(r'([\-\-])|(\-\-)', i['snippet']['title'])
+                splits = re.split(r'( [\-\-] )|( \-\- )', i['snippet']['title'])
                 d['title'] = splits[0]
                 d['speaker'] = splits[-1]
                 d['url'] = 'https://youtu.be/' + i['contentDetails']['videoId']
