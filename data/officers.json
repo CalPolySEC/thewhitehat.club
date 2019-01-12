@@ -14,15 +14,15 @@
         "name": "Jennifer Maunder",
         "image": "jennifer.jpg"
     },
-    "corpliason": {
-        "position": "Corporate Liaison",
-        "name": "Justin Engwall",
-        "image": "justin.jpg"
-    },
     "public": {
         "position": "Publicity",
         "name": "Austin Shin",
         "image": "austin.jpg"
+    },
+    "social": {
+        "position": "Social Chair",
+        "name": "Veronica Pollock",
+        "image": "veronica.jpg"
     },
     "treasurer": {
         "position": "Treasurer",
@@ -39,11 +39,6 @@
         "name": "Donnie Sanchez",
         "image": "donnie.jpg"
     },
-    "social": {
-        "position": "Social Chair",
-        "name": "Veronica Pollock",
-        "image": "veronica.jpg"
-    },
     "hardware": {
         "position": "Hardware Outreach",
         "name": "Thomas Garcia",
@@ -58,5 +53,10 @@
         "position": "SysAdmin",
         "name": "Stephen Parkinson",
         "image": "stephen.jpg"
+    },
+    "corpliason": {
+        "position": "Corporate Liaison",
+        "name": "Justin Engwall",
+        "image": "justin.jpg"
     }
 }
