@@ -16,5 +16,8 @@ seclab.log
 # Python Git Ignores
 *.pyc
 
+# Development Git Ignores
+.DS_Store
+
 # Website Ignores
 static/css

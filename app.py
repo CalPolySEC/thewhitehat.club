@@ -143,7 +143,7 @@ def sPUT() -> Response:
     try:
         r = request.json
     except Exception as m:
-        return jsonify({"prompt": s["d"], "response": "", "error": str(m)})
+        return jsonify({"prompt": s[1]["d"], "response": "", "error": str(m)})
     if not r or not request:
         return jsonify(s[0][""][0])
     s = s[1]
