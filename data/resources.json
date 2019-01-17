@@ -73,6 +73,11 @@
     ],
     "Useful Links": [
         {
+            "name": "White Hat's Github",
+            "link": "https://github.com/WhiteHatCP/thewhitehat.club",
+            "description": "the source code for this website! (Please submit all bugs/feature requests as issues <a href='https://github.com/WhiteHatCP/thewhitehat.club/issues' target='_blank'>here</a>!!) Our Github account also contains many other cool projects and links that we're working on, highly recommended to check out!"
+        },
+        {
             "name": "CTFtime",
             "link": "https://ctftime.org/team/8754",
             "description": "the official link to our CTF team! Click to view how we've been doing!"
