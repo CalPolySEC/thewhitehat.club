@@ -36,6 +36,11 @@
             "description": "the GNU Project Debugger allows you to debug another program while it is running on a system."
         },
         {
+            "name": "LLDB",
+            "link": "https://lldb.llvm.org/",
+            "description": "a reimplementation of GDB targeted at LLVM-based systems, useful for debugging on macOS (also has a nicer UI than GDB)."
+        },
+        {
             "name": "ltrace",
             "link": "http://man7.org/linux/man-pages/man1/ltrace.1.html",
             "description": "a Linux debugging utility that displays trace calls made by userspace applications/programs/binaries to shared libraries in order to facilitate reverse-engineering and debugging processes."
@@ -105,7 +110,12 @@
         {
             "name": "OverTheWire Wargames",
             "link": "http://overthewire.org/wargames",
-            "description": "a series of online CTF-training challenges designed to help you learn and practice security concept (if you haven't done CTFs before, try the <a href='http://overthewire.org/wargames/bandit' target='_blank'>Bandit</a> challenges!)"
+            "description": "a series of online CTF-training challenges designed to help you learn and practice security concepts (if you haven't done CTFs before, try the <a href='http://overthewire.org/wargames/bandit' target='_blank'>Bandit</a> challenges!)"
+        },
+        {
+            "name": "MicroCorruption",
+            "link": "https://microcorruption.com",
+            "description": "an embedded-system CTF, super good for learning the basics of assembly and practicing reverse-engineering/debugging!"
         },
         {
             "name": "VulnHub",
