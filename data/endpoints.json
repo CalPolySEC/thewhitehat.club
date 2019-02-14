@@ -1,0 +1,13 @@
+{
+    "endpoints": [
+        "/list",
+        "/main",
+        "/about",
+        "/events",
+        "/events/today",
+        "/videos",
+        "/officers",
+        "/resources",
+        "/status"
+    ]
+}

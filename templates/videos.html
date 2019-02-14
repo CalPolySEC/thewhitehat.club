@@ -3,14 +3,14 @@
     {{ video_writer() }}
     <div class="video-container">
         <div class="grid-container">
-            {% for i in range(0, video_process()|length) %}
+            {% for i in range(0, get_videos()|length) %}
             <div class="video">
-                <a href="{{ video_process()[i]['url'] }}" target="__blank">
+                <a href="{{ get_videos()[i]['url'] }}" target="__blank">
                     <div class="video-overlay"></div>
-                    <img class="video-image" src="{{ video_process()[i]['img'] }}" alt="{{ video_process()[i]['title'] }}">
+                    <img class="video-image" src="{{ get_videos()[i]['img'] }}" alt="{{ get_videos()[i]['title'] }}">
                     <div class="video-details fadeIn-top">
-                        <h3>{{ video_process()[i]['title'] }}</h3>
-                        <p>by {{ video_process()[i]['speaker'] }}</p>
+                        <h3>{{ get_videos()[i]['title'] }}</h3>
+                        <p>by {{ get_videos()[i]['speaker'] }}</p>
                     </div>
                 </a>
             </div>

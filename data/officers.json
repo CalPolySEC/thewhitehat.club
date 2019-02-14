@@ -4,7 +4,7 @@
         "name": "Kylan Stewart",
         "image": "kylan.jpg"
     },
-    "vp": {
+    "vicepresident": {
         "position": "Vice President",
         "name": "Nicole Anderson-Au",
         "image": "nicole.jpg"
@@ -14,12 +14,12 @@
         "name": "Jennifer Maunder",
         "image": "jennifer.jpg"
     },
-    "public": {
+    "publicity": {
         "position": "Publicity",
         "name": "Austin Shin",
         "image": "austin.jpg"
     },
-    "social": {
+    "socialchair": {
         "position": "Social Chair",
         "name": "Veronica Pollock",
         "image": "veronica.jpg"

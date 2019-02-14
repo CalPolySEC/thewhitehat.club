@@ -8,13 +8,13 @@
                     <img src="/groupclub.jpg" id="full-groupimg">
                     <div id="groupimg-blurred"></div>
                 </div>
-                {% for i in get_aboutinfo() %}
+                {% for i in get_about() %}
                 <div class="about-section">
                     <div>
                         <h1>{{ i }}</h1>
-                        {% for j in range(0, get_aboutinfo()[i]|length) %}
-                        <h2>{{  get_aboutinfo()[i][j]["phrase"]|safe }}</h2>
-                        <p>{{ get_aboutinfo()[i][j]["description"]|safe }}</p>
+                        {% for j in range(0, get_about()[i]|length) %}
+                        <h2>{{  get_about()[i][j]["phrase"]|safe }}</h2>
+                        <p>{{ get_about()[i][j]["description"]|safe }}</p>
                         {% endfor %}
                     </div>
                 </div>
