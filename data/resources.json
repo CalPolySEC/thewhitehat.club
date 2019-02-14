@@ -120,14 +120,24 @@
         {
             "name": "VulnHub",
             "link": "https://www.vulnhub.com/",
-            "description": "a system of challenges stored within virtual machines that allow anyone to gain practical 'hands-on' experience in digital security, computer software & network administration."
+            "description": "a system of challenges stored within virtual machines that allow anyone to gain practical 'hands-on' experience in digital security, computer software, and network administration."
         }
     ],
     "Cool Security Books": [
         {
             "name": "Practical Malware Analysis (PMA)",
-            "link": "https://www.amazon.com/Practical-Malware-Analysis-Hands-Dissecting/dp/1593272901/ref=sr_1_1?ie=UTF8&qid=1546130408&sr=8-1&keywords=practical+malware+analysis",
+            "link": "https://www.amazon.com/Practical-Malware-Analysis-Hands-Dissecting/dp/1593272901",
             "description": "the industry-standard on teaching basic and advanced malware analysis tools and techniques! Highly recommended if you want to learn how to safely analyze malware, reverse engineer, debug, and disassemble malicious software, and more! (applies to Windows-based malware and virus samples)"
+        },
+        {
+            "name": "The Tangled Web",
+            "link": "https://www.amazon.com/Tangled-Web-Securing-Modern-Applications/dp/1593273886",
+            "description": "explains the methods behind how browsers work, where their flaws are, and how to design and implement web applications designed with modern security features."
+        },
+        {
+            "name": "The Web Application Hacker's Handbook",
+            "link": "https://www.amazon.com/Web-Application-Hackers-Handbook-Exploiting/dp/1118026470",
+            "description": "a great resource on discovering, exploiting, and preventing web application security flaws! This book goes through different techniques for attacking and defending web applications, including how to utilize cross-domain integration techniques, UI redress, HTTP parameter pollution, and more!"
         }
     ]
 }
