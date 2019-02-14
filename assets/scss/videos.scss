@@ -6,6 +6,7 @@ body {
     height: calc(100vh - 2 * 7vh);
     overflow-x: hidden;
     overflow-y: scroll;
+    background-color: $dark-bg-color;
 }
 
 @media screen
