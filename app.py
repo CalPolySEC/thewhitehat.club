@@ -331,7 +331,10 @@ def check_calendar():
         if result['start']['dateTime'] == None:
             return ("None", "None", "None", "None") # no event could be found for the current date
         time = result['start']['dateTime'].split('T')[1][:-6]
+        print(result['start']['dateTime'].split('T')[1][:-6].split(':'))
         time = time.split(':')
+        time.remove(time[-1])
+        print(time)
         hr = int(time[0])
         
         if hr >= 12 and hr != 24:
@@ -340,9 +343,12 @@ def check_calendar():
             time.append('AM')
 
         hr = str(hr % 12)
+        if hr == "0":
+            hr = "12"
         time[0] = hr
 
-        time = ":".join(time[:-2]) + " " + time[-1]
+        time = ":".join(time[:-1]) + " " + time[-1]
+        print(time)
         try:
             return (result['summary'], result['location'], time, result['htmlLink'])
         except:
