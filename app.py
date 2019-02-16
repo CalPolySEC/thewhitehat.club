@@ -162,41 +162,39 @@ def sPUT() -> Response:
 
 ######## API Endpoints ########
 
-@app.route('/api', methods=['GET'])
+version = 1
+
+@app.route('/api/' + 'v' + str(version), methods=['GET'])
 def api_root() -> Response:
     message = "Welcome to White Hat's API!"
     data = None
     return jsonify({"message": message, "data": data, "status": 200})
 
-@app.route('/api/list', methods=['GET'])
+@app.route('/api/'  + 'v' + str(version) + '/ls', methods=['GET'])
 def api_list() -> Response:
     message = "Available Endpoints"
     data = json.load(open("data/endpoints.json", "r"))
     return jsonify({"message": message, "data": data, "status": 200})
 
-@app.route('/api/ls', methods=['GET'])
-def api_ls():
-    return redirect('/api/list', code=301)
-
-@app.route('/api/main', methods=['GET'])
+@app.route('/api/'  + 'v' + str(version) + '/main', methods=['GET'])
 def api_main() -> Response:
     message = "Index Page Content"
     data = json.load(open('data/main.json', "r"))
     return jsonify({"message": message, "data": data, "status": 200})
 
-@app.route('/api/about', methods=['GET'])
+@app.route('/api/'  + 'v' + str(version) + '/about', methods=['GET'])
 def api_about() -> Response:
     message = "About Page Content"
     data = json.load(open('data/about.json', "r"))
     return jsonify({"message": message, "data": data, "status": 200})
 
-@app.route('/api/events', methods=['GET'])
+@app.route('/api/'  + 'v' + str(version) + '/events', methods=['GET'])
 def api_events() -> Response:
     message = "Not Implemented!"
     data = None
     return jsonify({"message": message, "data": data, "status": 501})
 
-@app.route('/api/events/today', methods=['GET'])
+@app.route('/api/'  + 'v' + str(version) + '/events/today', methods=['GET'])
 def api_today() -> Response:
     message = "Today's Current Event"
     today = check_calendar()
@@ -212,13 +210,13 @@ def api_today() -> Response:
 
     return jsonify({"message": message, "data": data, "status": 200})
 
-@app.route('/api/events/<unavailable>', methods=['GET'])
+@app.route('/api/'  + 'v' + str(version) + 'events/<unavailable>', methods=['GET'])
 def api_events_404(unavailable) -> Response:
     message = "UNAVAILABLE! The endpoint '" + "/api/events" + unavailable + "' does not exist!"
     data = None
     return jsonify({"message": message, "data": data, "status": 404})
 
-@app.route('/api/videos', methods=['GET'])
+@app.route('/api/'  + 'v' + str(version) + '/videos', methods=['GET'])
 def api_videos() -> Response:
     message = "Our YouTube Videos"
     data = {"channel": {"name": "White Hat Cal Poly", "id": "UCn-I4GvWA5BiGxRJJBsKWBQ"}, "videos": []}
@@ -238,7 +236,7 @@ def api_videos() -> Response:
 
     return jsonify({"message": message, "data": data, "status": 200})
 
-@app.route('/api/officers', methods=['GET'])
+@app.route('/api/'  + 'v' + str(version) + '/officers', methods=['GET'])
 def api_officers() -> Response:
     message = "Current Officers"
     data = {}
@@ -246,13 +244,13 @@ def api_officers() -> Response:
     data['count'] = len(data['officers'])
     return jsonify({"message": message, "data": data, "status": 200})
 
-@app.route('/api/resources', methods=['GET'])
+@app.route('/api/'  + 'v' + str(version) + '/resources', methods=['GET'])
 def api_resources() -> Response:
     message = "Resources Page Content"
     data = json.load(open('data/resources.json', "r"))
     return jsonify({"message": message, "data": data, "status": 200})
 
-@app.route('/api/status', methods=['GET'])
+@app.route('/api/'  + 'v' + str(version) + '/status', methods=['GET'])
 def api_status() -> Response:
     message = "Lab Status"
     res = requests.get("https://thewhitehat.club/status.json")
@@ -263,11 +261,18 @@ def api_status() -> Response:
 
     return jsonify({"message": message, "data": data, "status": 200})
 
+@app.route('/api/'  + 'v' + str(version) + '/<unavailable>', methods=['GET'])
+def api_v1_404(unavailable) -> Response:
+    message = "UNAVAILABLE! The endpoint '" + "/api/" + "v" + str(version) + "/" + unavailable + "' does not exist!"
+    data = None
+    return jsonify({"message": message, "data": data, "status": 404})
+
 @app.route('/api/<unavailable>', methods=['GET'])
 def api_404(unavailable) -> Response:
     message = "UNAVAILABLE! The endpoint '" + "/api/" + unavailable + "' does not exist!"
     data = None
     return jsonify({"message": message, "data": data, "status": 404})
+
 
 ######## Error Routing ########
 

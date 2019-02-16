@@ -1,6 +1,6 @@
 {
     "endpoints": [
-        "/list",
+        "/ls",
         "/main",
         "/about",
         "/events",
