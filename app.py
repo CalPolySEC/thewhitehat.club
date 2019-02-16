@@ -389,26 +389,28 @@ def utility_processor():
 
         maxResults = str(1)
         url = 'https://www.googleapis.com/youtube/v3/playlistItems?part=snippet%2CcontentDetails%2Cstatus&playlistId=UUn-I4GvWA5BiGxRJJBsKWBQ&maxResults='
-        if requests.get(url + maxResults + '&key=' + API_KEY).json()['items'][0]['snippet']['title'] == json.load(open('data/videos.json', 'r'))['items'][0]['snippet']['title']:
-            print('SAME AS FILE')
-            return ''
-        maxResults = str(50)
+        try:
+            if requests.get(url + maxResults + '&key=' + API_KEY).json()['items'][0]['snippet']['title'] == json.load(open('data/videos.json', 'r'))['items'][0]['snippet']['title']:
+                print('SAME AS FILE')
+                return ''
+        except:
+            maxResults = str(50)
         
-        # TODO
-        # make run in a separate file on a cronjob that also checks every n time interval
-        # change to automatically getting requests and accessing the next page token until no page token exists:
-        # OR, ideally just add newest video to the .json dictionary listing at index 0 of 'items' (ENSURE THAT EVERYTHING ELSE IS MOVED BACK IN INDEX)
-        #   then would only need to get 1 result in request if different
-        request1 = requests.get(url + maxResults + '&key=' + API_KEY).json()
+            # TODO
+            # make run in a separate file on a cronjob that also checks every n time interval
+            # change to automatically getting requests and accessing the next page token until no page token exists:
+            # OR, ideally just add newest video to the .json dictionary listing at index 0 of 'items' (ENSURE THAT EVERYTHING ELSE IS MOVED BACK IN INDEX)
+            #   then would only need to get 1 result in request if different
+            request1 = requests.get(url + maxResults + '&key=' + API_KEY).json()
 
-        request2 = requests.get(url + maxResults + '&key=' + API_KEY + '&pageToken=' + request1['nextPageToken']).json()
-        request = dict(request1)
-        for i in request2['items']:
-            request['items'].append(i)
+            request2 = requests.get(url + maxResults + '&key=' + API_KEY + '&pageToken=' + request1['nextPageToken']).json()
+            request = dict(request1)
+            for i in request2['items']:
+                request['items'].append(i)
 
-        with open('data/videos.json', 'w') as outfile:
-            json.dump(request, outfile)
-        return ''
+            with open('data/videos.json', 'w') as outfile:
+                json.dump(request, outfile)
+            return ''
 
     def get_videos():
         with open('data/videos.json', 'r') as infile:
