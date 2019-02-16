@@ -21,3 +21,4 @@ seclab.log
 
 # Website Ignores
 static/css
+data/videos.json
