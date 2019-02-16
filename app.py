@@ -162,6 +162,8 @@ def sPUT() -> Response:
 
 ######## API Endpoints ########
 
+# Change this when major API version rewrites occur!
+# (Although support for older versions is recommended to be kept live too)
 version = 1
 
 @app.route('/api/' + 'v' + str(version), methods=['GET'])
