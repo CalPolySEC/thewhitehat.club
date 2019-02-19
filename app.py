@@ -173,28 +173,55 @@ def api_root() -> Response:
     return jsonify({"message": message, "data": data, "status": 200})
 
 @app.route('/api/'  + 'v' + str(version) + '/ls', methods=['GET'])
-def api_list() -> Response:
+def api_list():
     message = "Available Endpoints"
-    data = json.load(open("data/endpoints.json", "r"))
-    return jsonify({"message": message, "data": data, "status": 200})
+    filename = "data/endpoints.json"
+    try:
+        with open(filename, "r") as f:
+            data = json.load(f)
+            return jsonify({"message": message, "data": data})
+    except FileNotFoundError:
+        return jsonify({"message": message, "error": "open failure"}), 404
+    except json.JSONDecodeError:
+        return jsonify({"message": message, "error": "invalid json"}), 404
+    except:
+        return jsonify({"message": message, "error": "internal error"}), 500
 
 @app.route('/api/'  + 'v' + str(version) + '/main', methods=['GET'])
 def api_main() -> Response:
     message = "Index Page Content"
-    data = json.load(open('data/main.json', "r"))
-    return jsonify({"message": message, "data": data, "status": 200})
+    filename = 'data/main.json'
+    try:
+        with open(filename, "r") as f:
+            data = json.load(f)
+            return jsonify({"message": message, "data": data})
+    except FileNotFoundError:
+        return jsonify({"message": message, "error": "open failure"}), 404
+    except json.JSONDecodeError:
+        return jsonify({"message": message, "error": "invalid json"}), 404
+    except:
+        return jsonify({"message": message, "error": "internal error"}), 500
 
 @app.route('/api/'  + 'v' + str(version) + '/about', methods=['GET'])
 def api_about() -> Response:
     message = "About Page Content"
-    data = json.load(open('data/about.json', "r"))
-    return jsonify({"message": message, "data": data, "status": 200})
+    filename = 'data/about.json'
+    try:
+        with open(filename, "r") as f:
+            data = json.load(f)
+            return jsonify({"message": message, "data": data})
+    except FileNotFoundError:
+        return jsonify({"message": message, "error": "open failure"}), 404
+    except json.JSONDecodeError:
+        return jsonify({"message": message, "error": "invalid json"}), 404
+    except:
+        return jsonify({"message": message, "error": "internal error"}), 500
 
 @app.route('/api/'  + 'v' + str(version) + '/events', methods=['GET'])
 def api_events() -> Response:
     message = "Not Implemented!"
     data = None
-    return jsonify({"message": message, "data": data, "status": 501})
+    return jsonify({"message": message, "data": data}), 501
 
 @app.route('/api/'  + 'v' + str(version) + '/events/today', methods=['GET'])
 def api_today() -> Response:
@@ -210,7 +237,7 @@ def api_today() -> Response:
         data['time'] = today[2]
         data['url'] = today[3]
 
-    return jsonify({"message": message, "data": data, "status": 200})
+    return jsonify({"message": message, "data": data})
 
 @app.route('/api/'  + 'v' + str(version) + 'events/<unavailable>', methods=['GET'])
 def api_events_404(unavailable) -> Response:
@@ -222,35 +249,62 @@ def api_events_404(unavailable) -> Response:
 def api_videos() -> Response:
     message = "Our YouTube Videos"
     data = {"channel": {"name": "White Hat Cal Poly", "id": "UCn-I4GvWA5BiGxRJJBsKWBQ"}, "videos": []}
-    videos = json.load(open('data/videos.json', "r"))
+    filename = 'data/videos.json'
+    try:
+        with open(filename, "r") as f:
+            videos = json.load(f)
 
-    for v in videos['items']:
-        video = {}
-        video['title'] = v['snippet']['title']
-        video['description'] = v['snippet']['description']
-        video['id'] = v['contentDetails']['videoId']
-        video['url'] = 'https://youtube.com/watch?v=' + video['id']
-        video['uploaded'] = v['snippet']['publishedAt']
+            for v in videos['items']:
+                video = {}
+                video['title'] = v['snippet']['title']
+                video['description'] = v['snippet']['description']
+                video['id'] = v['contentDetails']['videoId']
+                video['url'] = 'https://youtube.com/watch?v=' + video['id']
+                video['uploaded'] = v['snippet']['publishedAt']
 
-        data['videos'].append(video)
+                data['videos'].append(video)
 
-    data['count'] = len(data['videos'])
+            data['count'] = len(data['videos'])
 
-    return jsonify({"message": message, "data": data, "status": 200})
+            return jsonify({"message": message, "data": data})
+    except FileNotFoundError:
+        return jsonify({"message": message, "error": "open failure"}), 404
+    except json.JSONDecodeError:
+        return jsonify({"message": message, "error": "invalid json"}), 404
+    except:
+        return jsonify({"message": message, "error": "internal error"}), 500
 
 @app.route('/api/'  + 'v' + str(version) + '/officers', methods=['GET'])
 def api_officers() -> Response:
     message = "Current Officers"
+    filename = 'data/officers.json'
     data = {}
-    data['officers'] = json.load(open("data/officers.json", "r"))
-    data['count'] = len(data['officers'])
-    return jsonify({"message": message, "data": data, "status": 200})
+    try:
+        with open(filename, "r") as f:
+            data['officers'] = json.load(f)
+            data['count'] = len(data['officers'])
+            return jsonify({"message": message, "data": data})
+    except FileNotFoundError:
+        return jsonify({"message": message, "error": "open failure"}), 404
+    except json.JSONDecodeError:
+        return jsonify({"message": message, "error": "invalid json"}), 404
+    except:
+        return jsonify({"message": message, "error": "internal error"}), 500
 
 @app.route('/api/'  + 'v' + str(version) + '/resources', methods=['GET'])
 def api_resources() -> Response:
     message = "Resources Page Content"
-    data = json.load(open('data/resources.json', "r"))
-    return jsonify({"message": message, "data": data, "status": 200})
+    filename = 'data/resources.json'
+    try:
+        with open(filename, "r") as f:
+            data = json.load(f)
+            return jsonify({"message": message, "data": data})
+    except FileNotFoundError:
+        return jsonify({"message": message, "error": "open failure"}), 404
+    except json.JSONDecodeError:
+        return jsonify({"message": message, "error": "invalid json"}), 404
+    except:
+        return jsonify({"message": message, "error": "internal error"}), 500
 
 @app.route('/api/'  + 'v' + str(version) + '/status', methods=['GET'])
 def api_status() -> Response:
@@ -258,22 +312,21 @@ def api_status() -> Response:
     res = requests.get("https://thewhitehat.club/status.json")
     if res.status_code == 200:
         data = res.json()
+        return jsonify({"message": message, "data": data})
     else:
-        data = "UNAVAILABLE"
-
-    return jsonify({"message": message, "data": data, "status": 200})
+        return jsonify({"message": message, "error": "internal error"}), 500
 
 @app.route('/api/'  + 'v' + str(version) + '/<unavailable>', methods=['GET'])
 def api_v1_404(unavailable) -> Response:
     message = "UNAVAILABLE! The endpoint '" + "/api/" + "v" + str(version) + "/" + unavailable + "' does not exist!"
     data = None
-    return jsonify({"message": message, "data": data, "status": 404})
+    return jsonify({"message": message, "data": data}), 404
 
 @app.route('/api/<unavailable>', methods=['GET'])
 def api_404(unavailable) -> Response:
     message = "UNAVAILABLE! The endpoint '" + "/api/" + unavailable + "' does not exist!"
     data = None
-    return jsonify({"message": message, "data": data, "status": 404})
+    return jsonify({"message": message, "data": data, }), 404
 
 
 ######## Error Routing ########
