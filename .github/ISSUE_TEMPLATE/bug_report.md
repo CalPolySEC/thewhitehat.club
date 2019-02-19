@@ -3,6 +3,7 @@ name: Bug report
 about: Create a report to help us improve our website!
 title: ''
 labels: bug
+projects: Issues
 assignees: jon77p
 
 ---
