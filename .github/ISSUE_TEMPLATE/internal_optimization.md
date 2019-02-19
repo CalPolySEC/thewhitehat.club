@@ -3,6 +3,7 @@ name: Internal optimization suggestion
 about: Suggest a new optimization/fix for internal-related tasks
 title: ''
 labels: optimization, suggestion
+projects: Internal Optimizations
 assignees: jon77p
 
 ---
