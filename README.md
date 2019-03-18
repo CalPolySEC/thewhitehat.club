@@ -25,10 +25,16 @@ source venv/bin/activate
 pip3 install -r requirements.txt
 ```
 
-4. And finally, run the app with
+4. Create the empty directory `static/css`
+
+```bash
+mkdir static/css
+```
+
+5. And finally, run the app with
 
 ```bash
 python3 app.py
 ```
 
-5. Visit [0.0.0.0:3000](0.0.0.0:3000) to view the site running locally.
+6. Visit [0.0.0.0:3000](0.0.0.0:3000) to view the site running locally.
