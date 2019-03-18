@@ -1,6 +1,5 @@
 {% extends "base.html" %}
 {% block body %}
-    {{ video_writer() }}
     <div class="video-container">
         <div class="grid-container">
             {% for i in range(0, get_videos()|length) %}

@@ -1,0 +1,13 @@
+{
+    "building": {
+        "name": "Bonderson",
+        "number": "197"
+    },
+    "room": "204",
+    "images": [
+        "/lab1.jpg",
+        "/lab2.jpg",
+        "/lab3.jpg",
+        "/lab4.jpg"
+    ]
+}

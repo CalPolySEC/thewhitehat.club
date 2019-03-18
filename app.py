@@ -51,6 +51,7 @@ def resources():
 
 @app.route('/videos')
 def videos():
+    video_writer()
     return render_template('videos.html')
 
 @app.route('/calendar')
@@ -247,6 +248,7 @@ def api_events_404(unavailable) -> Response:
 
 @app.route('/api/'  + 'v' + str(version) + '/videos', methods=['GET'])
 def api_videos() -> Response:
+    video_writer()
     message = "Our YouTube Videos"
     data = {"channel": {"name": "White Hat Cal Poly", "id": "UCn-I4GvWA5BiGxRJJBsKWBQ"}, "videos": []}
     filename = 'data/videos.json'
@@ -306,6 +308,21 @@ def api_resources() -> Response:
     except:
         return jsonify({"message": message, "error": "internal error"}), 500
 
+@app.route('/api/' + 'v' + str(version) + '/visit', methods=['GET'])
+def api_visit() -> Response:
+    message = "Visit our lab!"
+    filename = 'data/visit.json'
+    try:
+        with open(filename, "r") as f:
+            data = json.load(f)
+            return jsonify({"message": message, "data": data})
+    except FileNotFoundError:
+        return jsonify({"message": message, "error": "open failure"}), 404
+    except json.JSONDecodeError:
+        return jsonify({"message": message, "error": "invalid json"}), 404
+    except:
+        return jsonify({"message": message, "error": "internal error"}), 500
+
 @app.route('/api/'  + 'v' + str(version) + '/status', methods=['GET'])
 def api_status() -> Response:
     message = "Lab Status"
@@ -340,8 +357,11 @@ def page_not_found(e):
 def tokenreauth():
     url = 'https://www.googleapis.com/oauth2/v4/token'
 
-    headers = {'grant_type': 'refresh_token', 'refresh_token': os.environ.get('CALENDAR_REFRESH_TOKEN'), 'client_id': os.environ.get('CALENDAR_ID'), 'client_secret': os.environ.get('CALENDAR_SECRET')}
-    final_url = url + "?refresh_token=" + headers['refresh_token'] + "&client_id=" + headers['client_id'] + "&client_secret=" + headers['client_secret'] + "&grant_type=" + headers['grant_type']
+    try:
+        headers = {'grant_type': 'refresh_token', 'refresh_token': os.environ.get('CALENDAR_REFRESH_TOKEN'), 'client_id': os.environ.get('CALENDAR_ID'), 'client_secret': os.environ.get('CALENDAR_SECRET')}
+        final_url = url + "?refresh_token=" + headers['refresh_token'] + "&client_id=" + headers['client_id'] + "&client_secret=" + headers['client_secret'] + "&grant_type=" + headers['grant_type']
+    except:
+        return None # local development
 
     req = requests.post(final_url)
     res = req.json()
@@ -356,6 +376,9 @@ def check_calendar():
             raise Exception()
     except:
         AUTH_TOKEN = tokenreauth()
+
+    if AUTH_TOKEN is None:
+        return ("None", "None", "None", "None") # running in local development
 
     headers = {'Authorization': 'Bearer {}'.format(AUTH_TOKEN)}
 
@@ -414,6 +437,56 @@ def check_calendar():
         except:
             return (result['summary'], "197-204", time, result['htmlLink'])
 
+def video_writer():
+        API_KEY = os.environ.get('VIDEOS_API')
+        if API_KEY is None:
+            return None
+
+        maxResults = str(1)
+        url = 'https://www.googleapis.com/youtube/v3/playlistItems?part=snippet%2CcontentDetails%2Cstatus&playlistId=UUn-I4GvWA5BiGxRJJBsKWBQ&maxResults='
+        try:
+            if requests.get(url + maxResults + '&key=' + API_KEY).json()['items'][0]['snippet']['title'] == json.load(open('data/videos.json', 'r'))['items'][0]['snippet']['title']:
+                print('SAME AS FILE')
+                return ''
+            else:
+                print("NOPE")
+                # this is the same code as for exceptions, need to make better/cleaner...
+                maxResults = str(50)
+        
+                # TODO
+                # make run in a separate file on a cronjob that also checks every n time interval
+                # change to automatically getting requests and accessing the next page token until no page token exists:
+                # OR, ideally just add newest video to the .json dictionary listing at index 0 of 'items' (ENSURE THAT EVERYTHING ELSE IS MOVED BACK IN INDEX)
+                #   then would only need to get 1 result in request if different
+                request1 = requests.get(url + maxResults + '&key=' + API_KEY).json()
+
+                request2 = requests.get(url + maxResults + '&key=' + API_KEY + '&pageToken=' + request1['nextPageToken']).json()
+                request = dict(request1)
+                for i in request2['items']:
+                    request['items'].append(i)
+
+                with open('data/videos.json', 'w') as outfile:
+                    json.dump(request, outfile)
+                return ''
+        except:
+            maxResults = str(50)
+        
+            # TODO
+            # make run in a separate file on a cronjob that also checks every n time interval
+            # change to automatically getting requests and accessing the next page token until no page token exists:
+            # OR, ideally just add newest video to the .json dictionary listing at index 0 of 'items' (ENSURE THAT EVERYTHING ELSE IS MOVED BACK IN INDEX)
+            #   then would only need to get 1 result in request if different
+            request1 = requests.get(url + maxResults + '&key=' + API_KEY).json()
+
+            request2 = requests.get(url + maxResults + '&key=' + API_KEY + '&pageToken=' + request1['nextPageToken']).json()
+            request = dict(request1)
+            for i in request2['items']:
+                request['items'].append(i)
+
+            with open('data/videos.json', 'w') as outfile:
+                json.dump(request, outfile)
+            return ''
+
 @app.context_processor
 def utility_processor():
 
@@ -437,48 +510,24 @@ def utility_processor():
 
             return res
 
-    def video_writer():
-        API_KEY = os.environ.get('VIDEOS_API')
-
-        maxResults = str(1)
-        url = 'https://www.googleapis.com/youtube/v3/playlistItems?part=snippet%2CcontentDetails%2Cstatus&playlistId=UUn-I4GvWA5BiGxRJJBsKWBQ&maxResults='
-        try:
-            if requests.get(url + maxResults + '&key=' + API_KEY).json()['items'][0]['snippet']['title'] == json.load(open('data/videos.json', 'r'))['items'][0]['snippet']['title']:
-                print('SAME AS FILE')
-                return ''
-        except:
-            maxResults = str(50)
-        
-            # TODO
-            # make run in a separate file on a cronjob that also checks every n time interval
-            # change to automatically getting requests and accessing the next page token until no page token exists:
-            # OR, ideally just add newest video to the .json dictionary listing at index 0 of 'items' (ENSURE THAT EVERYTHING ELSE IS MOVED BACK IN INDEX)
-            #   then would only need to get 1 result in request if different
-            request1 = requests.get(url + maxResults + '&key=' + API_KEY).json()
-
-            request2 = requests.get(url + maxResults + '&key=' + API_KEY + '&pageToken=' + request1['nextPageToken']).json()
-            request = dict(request1)
-            for i in request2['items']:
-                request['items'].append(i)
-
-            with open('data/videos.json', 'w') as outfile:
-                json.dump(request, outfile)
-            return ''
-
     def get_videos():
-        with open('data/videos.json', 'r') as infile:
-            request = json.load(infile)
-            res = []
-            for i in request['items']:
-                d = {}
-                splits = re.split(r'( [\-\-] )|( \-\- )', i['snippet']['title'])
-                d['title'] = splits[0]
-                d['speaker'] = splits[-1]
-                d['url'] = 'https://youtu.be/' + i['contentDetails']['videoId']
-                d['img'] = i['snippet']['thumbnails']['high']['url']
-                res.append(d)
-            
-            return res
+        try:
+            with open('data/videos.json', 'r') as infile:
+                request = json.load(infile)
+                res = []
+                for i in request['items']:
+                    d = {}
+                    splits = re.split(r'( [\-\-] )|( \-\- )', i['snippet']['title'])
+                    d['title'] = splits[0]
+                    d['speaker'] = splits[-1]
+                    d['url'] = 'https://youtu.be/' + i['contentDetails']['videoId']
+                    d['img'] = i['snippet']['thumbnails']['high']['url']
+                    res.append(d)
+                
+                return res
+        except:
+            unavailable = {'title': 'Unavailable', 'speaker': 'Unavailable', 'url': '', 'img': '/lab1.jpg'}
+            return [unavailable] # running in local development mode
 
     def get_officers():
         with open('data/officers.json') as json_file:
@@ -506,7 +555,7 @@ def utility_processor():
 
             return timecard_dates
 
-    return dict(check_calendar=check_calendar, get_main=get_main, get_about=get_about, video_writer=video_writer, get_videos=get_videos, get_officers=get_officers, get_resources=get_resources, get_timecarddates=get_timecarddates)
+    return dict(check_calendar=check_calendar, get_main=get_main, get_about=get_about, get_videos=get_videos, get_officers=get_officers, get_resources=get_resources, get_timecarddates=get_timecarddates)
     
 
 if __name__ == '__main__':
