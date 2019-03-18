@@ -166,14 +166,21 @@ def sPUT() -> Response:
 # Change this when major API version rewrites occur!
 # (Although support for older versions is recommended to be kept live too)
 version = 1
+apiurl = '/api/' + 'v' + str(version)
 
-@app.route('/api/' + 'v' + str(version), methods=['GET'])
+@app.route(apiurl, methods=['GET'])
 def api_root() -> Response:
     message = "Welcome to White Hat's API!"
     data = None
     return jsonify({"message": message, "data": data, "status": 200})
 
-@app.route('/api/'  + 'v' + str(version) + '/ls', methods=['GET'])
+@app.route(apiurl + '/', methods=['GET'])
+def api_root2() -> Response:
+    message = "Welcome to White Hat's API!"
+    data = None
+    return jsonify({"message": message, "data": data, "status": 200})
+
+@app.route(apiurl + '/ls', methods=['GET'])
 def api_list():
     message = "Available Endpoints"
     filename = "data/endpoints.json"
@@ -188,7 +195,7 @@ def api_list():
     except:
         return jsonify({"message": message, "error": "internal error"}), 500
 
-@app.route('/api/'  + 'v' + str(version) + '/main', methods=['GET'])
+@app.route(apiurl + '/main', methods=['GET'])
 def api_main() -> Response:
     message = "Index Page Content"
     filename = 'data/main.json'
@@ -203,7 +210,7 @@ def api_main() -> Response:
     except:
         return jsonify({"message": message, "error": "internal error"}), 500
 
-@app.route('/api/'  + 'v' + str(version) + '/about', methods=['GET'])
+@app.route(apiurl + '/about', methods=['GET'])
 def api_about() -> Response:
     message = "About Page Content"
     filename = 'data/about.json'
@@ -218,13 +225,13 @@ def api_about() -> Response:
     except:
         return jsonify({"message": message, "error": "internal error"}), 500
 
-@app.route('/api/'  + 'v' + str(version) + '/events', methods=['GET'])
+@app.route(apiurl + '/events', methods=['GET'])
 def api_events() -> Response:
     message = "Not Implemented!"
     data = None
     return jsonify({"message": message, "data": data}), 501
 
-@app.route('/api/'  + 'v' + str(version) + '/events/today', methods=['GET'])
+@app.route(apiurl + '/events/today', methods=['GET'])
 def api_today() -> Response:
     message = "Today's Current Event"
     today = check_calendar()
@@ -246,7 +253,7 @@ def api_events_404(unavailable) -> Response:
     data = None
     return jsonify({"message": message, "data": data, "status": 404})
 
-@app.route('/api/'  + 'v' + str(version) + '/videos', methods=['GET'])
+@app.route(apiurl + '/videos', methods=['GET'])
 def api_videos() -> Response:
     video_writer()
     message = "Our YouTube Videos"
@@ -276,7 +283,7 @@ def api_videos() -> Response:
     except:
         return jsonify({"message": message, "error": "internal error"}), 500
 
-@app.route('/api/'  + 'v' + str(version) + '/officers', methods=['GET'])
+@app.route(apiurl + '/officers', methods=['GET'])
 def api_officers() -> Response:
     message = "Current Officers"
     filename = 'data/officers.json'
@@ -293,7 +300,7 @@ def api_officers() -> Response:
     except:
         return jsonify({"message": message, "error": "internal error"}), 500
 
-@app.route('/api/'  + 'v' + str(version) + '/resources', methods=['GET'])
+@app.route(apiurl + '/resources', methods=['GET'])
 def api_resources() -> Response:
     message = "Resources Page Content"
     filename = 'data/resources.json'
@@ -308,7 +315,7 @@ def api_resources() -> Response:
     except:
         return jsonify({"message": message, "error": "internal error"}), 500
 
-@app.route('/api/' + 'v' + str(version) + '/visit', methods=['GET'])
+@app.route(apiurl + '/visit', methods=['GET'])
 def api_visit() -> Response:
     message = "Visit our lab!"
     filename = 'data/visit.json'
@@ -323,7 +330,7 @@ def api_visit() -> Response:
     except:
         return jsonify({"message": message, "error": "internal error"}), 500
 
-@app.route('/api/'  + 'v' + str(version) + '/status', methods=['GET'])
+@app.route(apiurl + '/status', methods=['GET'])
 def api_status() -> Response:
     message = "Lab Status"
     res = requests.get("https://thewhitehat.club/status.json")
@@ -333,7 +340,7 @@ def api_status() -> Response:
     else:
         return jsonify({"message": message, "error": "internal error"}), 500
 
-@app.route('/api/'  + 'v' + str(version) + '/<unavailable>', methods=['GET'])
+@app.route(apiurl + '/<unavailable>', methods=['GET'])
 def api_v1_404(unavailable) -> Response:
     message = "UNAVAILABLE! The endpoint '" + "/api/" + "v" + str(version) + "/" + unavailable + "' does not exist!"
     data = None
