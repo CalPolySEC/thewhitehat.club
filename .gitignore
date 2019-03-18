@@ -9,6 +9,7 @@ share/
 local/
 .Python
 tox.ini
+venv/
 
 # Test Specific Git Ignores
 seclab.log
@@ -21,4 +22,5 @@ seclab.log
 
 # Website Ignores
 static/css
+static/*.css
 data/videos.json
