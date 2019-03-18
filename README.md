@@ -15,8 +15,8 @@ pip3 install vitualenv
 2. Create a new virtualenv in the root of the git repository and activate it with :
 
 ```bash
-virtualenv .
-source bin/activate
+virtualenv venv
+source venv/bin/activate
 ```
 
 3. Install the required pip packages with
