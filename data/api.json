@@ -1,0 +1,44 @@
+{
+    "ls": {
+        "message": "Available Endpoints",
+        "function": "getEndpoints()"
+    },
+    "main": {
+        "message": "Index Page Content",
+        "file": "data/main.json"
+    },
+    "about": {
+        "message": "About Page Content",
+        "file": "data/about.json"
+    },
+    "events": {
+        "message": "Not Implemented!",
+        "function": "getUpcomingEvents()"
+    },
+    "today": {
+        "message": "Today's Current Event",
+        "function": "getToday()"
+    },
+    "videos": {
+        "message": "Our YouTube Videos",
+        "function": "getVideos()",
+        "file": "data/videos.json"
+    },
+    "officers": {
+        "message": "Current Officers",
+        "function": "getOfficers()",
+        "file": "data/officers.json"
+    },
+    "resources": {
+        "message": "Resources Page Content",
+        "file": "data/resources.json"
+    },
+    "visit": {
+        "message": "Visit our lab!",
+        "file": "data/visit.json"
+    },
+    "status": {
+        "message": "Lab Status",
+        "function": "getStatus()"
+    }
+}
