@@ -9,11 +9,10 @@ from flask_scss import Scss
 from website_utils.timecard import MemoizedFile, get_date_or_none
 from website_utils.config_loader import read_config
 
+######## Initial Flask Application Setup/Configuration ########
+
 app = Flask(__name__)
 read_config(app)
-
-# Memoized 
-log_file = MemoizedFile(os.environ.get('BADGE_LOG_PATH', 'seclab.log'))
 
 # Start SCSS Compilation
 app_dir = os.path.dirname(os.path.abspath(__file__))
@@ -21,6 +20,11 @@ asset_dir = os.path.join(app_dir, "assets")
 static_dir = os.path.join(app_dir, "static")
 scss_compiler = Scss(app, static_dir='static', asset_dir='assets', load_paths=None)
 scss_compiler.update_scss()
+
+######## Environment-related ########
+
+# Memoized 
+log_file = MemoizedFile(os.environ.get('BADGE_LOG_PATH', 'seclab.log'))
 
 u = {'GET': 'None', 'POST': 'None'}
 try:
@@ -37,34 +41,17 @@ if e is not None:
 def home():
     return render_template('index.html')
 
-@app.route('/about')
-def about():
-    return render_template('about.html')
+@app.route('/<page_name>')
+def view_page(page_name):
+    with open('data/pages.json', 'r') as f:
+        pages = json.load(f)
 
-@app.route('/officers')
-def officers():
-    return render_template('officers.html')
-
-@app.route('/resources')
-def resources():
-    return render_template('resources.html')
-
-@app.route('/videos')
-def videos():
-    video_writer()
-    return render_template('videos.html')
-
-@app.route('/calendar')
-def calendar():
-    return render_template('calendar.html')
-
-@app.route('/signup')
-def signup():
-    return render_template('signup.html')
-
-@app.route('/visit')
-def visit():
-    return render_template('visit.html')
+        if page_name in pages['pages']:
+            if page_name == 'videos':
+                video_writer()
+            return render_template(page_name + '.html')
+        else:
+            abort(404)
 
 @app.route('/<file_name>.txt')
 def textfile(file_name):
@@ -99,6 +86,14 @@ def js(file_name):
         return app.send_static_file('sw' + '.js')
     return app.send_static_file('js/' + file_name + '.js')
 
+@app.route('/timecard.svg')
+def timecard_image():
+    range_start = get_date_or_none(request.args, 'start')
+    range_stop = get_date_or_none(request.args, 'end')
+    data, radii = log_file.get_timecard(range_start, range_stop)
+    contents = render_template('timecard.svg', data=data, radii=radii)
+    return Response(contents, mimetype='image/svg+xml')
+
 @app.route('/offline')
 def offline():
     out = render_template('offline.html')
@@ -113,18 +108,6 @@ def offline_badge():
 @app.route('/sw.js')
 def sw():
     return app.send_static_file('sw.js')
-
-@app.route('/timecard')
-def timecard():
-    return render_template('timecard.html')
-
-@app.route('/timecard.svg')
-def timecard_image():
-    range_start = get_date_or_none(request.args, 'start')
-    range_stop = get_date_or_none(request.args, 'end')
-    data, radii = log_file.get_timecard(range_start, range_stop)
-    contents = render_template('timecard.svg', data=data, radii=radii)
-    return Response(contents, mimetype='image/svg+xml')
 
 @app.route('/' + u['GET'], methods=['GET'])
 def sGET() -> Response:
@@ -163,7 +146,7 @@ def sPUT() -> Response:
 
 ######## API Endpoints ########
 
-# Change this when major API version rewrites occur!
+# Change the version number when major API version rewrites occur!
 # (Although support for older versions is recommended to be kept live until services have been fully migrated)
 version = 1
 

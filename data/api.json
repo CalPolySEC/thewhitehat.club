@@ -3,6 +3,10 @@
         "message": "Available Endpoints",
         "function": "getEndpoints()"
     },
+    "pages": {
+        "message": "Available Pages",
+        "file": "data/pages.json"
+    },
     "main": {
         "message": "Index Page Content",
         "file": "data/main.json"
