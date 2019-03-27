@@ -8,23 +8,23 @@
                 </div>
                 <div class="officers">
                     <div class="officers-left">
-                        {% for i in range(0, get_officers()|length // 2) %}
+                        {% for i in range(0, page_data['positions']|length // 2) %}
                         <div class="officer-item">
-                            <img height: inherit src="/officers-{{ get_officers()[i]['image'] }}">
+                            <img height: inherit src="/officers-{{ page_data['officers'][page_data['positions'][i]]['image'] }}">
                             <div>
-                                <h3><strong>{{ get_officers()[i]['position'] }}</strong></h3>
-                                <h4>{{ get_officers()[i]['name'] }}</h4>
+                                <h3><strong>{{ page_data['officers'][page_data['positions'][i]]['position'] }}</strong></h3>
+                                <h4>{{ page_data['officers'][page_data['positions'][i]]['name'] }}</h4>
                             </div>
                         </div>
                         {% endfor %}
                     </div>
                     <div class="officers-right">
-                        {% for i in range(get_officers()|length // 2, get_officers()|length) %}
+                        {% for i in range(page_data['positions']|length // 2, page_data['positions']|length) %}
                         <div class="officer-item">
-                            <img height: inherit src="/officers-{{ get_officers()[i]['image'] }}">
+                            <img height: inherit src="/officers-{{ page_data['officers'][page_data['positions'][i]]['image'] }}">
                             <div>
-                                <h3><strong>{{ get_officers()[i]['position'] }}</strong></h3>
-                                <h4>{{ get_officers()[i]['name'] }}</h4>
+                                <h3><strong>{{ page_data['officers'][page_data['positions'][i]]['position'] }}</strong></h3>
+                                <h4>{{ page_data['officers'][page_data['positions'][i]]['name'] }}</h4>
                             </div>
                         </div>
                         {% endfor %}

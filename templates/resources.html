@@ -7,12 +7,12 @@
                 {% include 'includes/logo.svg' %}
             </div>
             <div class="resources-body">
-                {% for i in get_resources() %}
+                {% for i in page_data %}
                 <div class="resources-group">
                     <h2>{{ i }}</h2>
                     <ul>
-                        {% for j in range(0, get_resources()[i]|length) %}
-                        <li><a href="{{ get_resources()[i][j]['link'] }}" target="_blank">{{ get_resources()[i][j]['name'] }}</a>: {{ get_resources()[i][j]['description']|safe }}</li>
+                        {% for j in range(0, page_data[i]|length) %}
+                        <li><a href="{{ page_data[i][j]['link'] }}" target="_blank">{{ page_data[i][j]['name'] }}</a>: {{ page_data[i][j]['description']|safe }}</li>
                         {% endfor %}
                     </ul>
                 </div>

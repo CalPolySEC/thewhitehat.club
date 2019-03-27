@@ -7,9 +7,9 @@
         "message": "Available Pages",
         "file": "data/pages.json"
     },
-    "main": {
+    "index": {
         "message": "Index Page Content",
-        "file": "data/main.json"
+        "file": "data/index.json"
     },
     "about": {
         "message": "About Page Content",
@@ -36,6 +36,11 @@
     "resources": {
         "message": "Resources Page Content",
         "file": "data/resources.json"
+    },
+    "timecard": {
+        "message": "Timecard Page Content",
+        "function": "getTimecard()",
+        "file": "data/timecard.json"
     },
     "visit": {
         "message": "Visit our lab!",

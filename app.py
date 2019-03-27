@@ -38,8 +38,16 @@ if e is not None:
 ######## Site Pages ########
 
 @app.route('/')
-def home():
-    return render_template('index.html')
+def index():
+    url = request.host_url + apiurl[1:] + '/' + 'index'
+    try:
+        req = requests.get(url, timeout=1)
+    except requests.exceptions.Timeout:
+        # if the API is overloaded, then return an error page to notify the user
+        return render_template('timeout.html')
+    
+    page_data = req.json().get("data")
+    return render_template('index.html', page_data=page_data)
 
 @app.route('/<page_name>')
 def view_page(page_name):
@@ -49,7 +57,17 @@ def view_page(page_name):
         if page_name in pages['pages']:
             if page_name == 'videos':
                 video_writer()
-            return render_template(page_name + '.html')
+
+            url = request.host_url + apiurl[1:] + '/' + page_name
+            try:
+                req = requests.get(url, timeout=1)
+            except requests.exceptions.Timeout:
+                # if the API is overloaded, then return an error page to notify the user
+                return render_template('timeout.html')
+
+            page_data = req.json().get("data")
+
+            return render_template(page_name + '.html', page_data=page_data)
         else:
             abort(404)
 
@@ -266,15 +284,40 @@ def getVideos(filename):
 
             for v in videos['items']:
                 video = {}
-                video['title'] = v['snippet']['title']
+                splits = re.split(r'( [\-\-] )|( \-\- )', v['snippet']['title'])
+                video['title'] = splits[0]
+                video['speaker'] = splits[-1]
                 video['description'] = v['snippet']['description']
                 video['id'] = v['contentDetails']['videoId']
-                video['url'] = 'https://youtube.com/watch?v=' + video['id']
+                video['url'] = 'https://youtu.be/' + v['contentDetails']['videoId']
                 video['uploaded'] = v['snippet']['publishedAt']
+                video['img'] = v['snippet']['thumbnails']['high']['url']
 
                 videolist.append(video)
         return {"videos": videolist, "count": len(videolist), "channel": channel}
     
+    except FileNotFoundError:
+        unavailable = {'title': 'Unavailable', 'speaker': 'Unavailable', 'url': '', 'img': '/lab1.jpg'}
+        videolist = [unavailable]
+        return {"error": "'" + filename + "': open failure", "videos": videolist, "count": 1, "channel": channel}
+    except json.JSONDecodeError:
+        unavailable = {'title': 'Unavailable', 'speaker': 'Unavailable', 'url': '', 'img': '/lab1.jpg'}
+        videolist = [unavailable]
+        return {"error": "'" + filename + "': invalid json", "videos": videolist, "count": 1, "channel": channel}
+    except Exception as msg:
+        unavailable = {'title': 'Unavailable', 'speaker': 'Unavailable', 'url': '', 'img': '/lab1.jpg'}
+        videolist = [unavailable]
+        return {"error": str(msg), "videos": videolist, "count": 1, "channel": channel}
+
+def getOfficers(filename):
+    data = {}
+    try:
+        with open(filename, "r") as f:
+            data['officers'] = json.load(f)
+            data['positions'] = list(i for i in data['officers'])
+            data['count'] = len(data['officers'])
+            return data
+
     except FileNotFoundError:
         return {"error": "'" + filename + "': open failure"}
     except json.JSONDecodeError:
@@ -282,12 +325,12 @@ def getVideos(filename):
     except Exception as msg:
         return {"error": str(msg)}
 
-def getOfficers(filename):
+def getTimecard(filename):
     data = {}
     try:
         with open(filename, "r") as f:
-            data['officers'] = json.load(f)
-            data['count'] = len(data['officers'])
+            data['dates'] = json.load(f)
+            data['count'] = len(data['dates'])
             return data
 
     except FileNotFoundError:
@@ -448,74 +491,7 @@ def video_writer():
 
 @app.context_processor
 def utility_processor():
-
-    def get_main():
-        with open('data/main.json') as json_file:
-            main = json.load(json_file)
-
-            res = {}
-            for i in main:
-                res[i] = main[i]
-
-            return res
-
-    def get_about():
-        with open('data/about.json') as json_file:
-            about = json.load(json_file)
-
-            res = {}
-            for i in about:
-                res[i] = about[i]
-
-            return res
-
-    def get_videos():
-        try:
-            with open('data/videos.json', 'r') as infile:
-                request = json.load(infile)
-                res = []
-                for i in request['items']:
-                    d = {}
-                    splits = re.split(r'( [\-\-] )|( \-\- )', i['snippet']['title'])
-                    d['title'] = splits[0]
-                    d['speaker'] = splits[-1]
-                    d['url'] = 'https://youtu.be/' + i['contentDetails']['videoId']
-                    d['img'] = i['snippet']['thumbnails']['high']['url']
-                    res.append(d)
-                
-                return res
-        except:
-            unavailable = {'title': 'Unavailable', 'speaker': 'Unavailable', 'url': '', 'img': '/lab1.jpg'}
-            return [unavailable] # running in local development mode
-
-    def get_officers():
-        with open('data/officers.json') as json_file:
-            data = json.load(json_file)
-
-            res = []
-            for i in data:
-                res.append(data[i])
-
-            return res
-
-    def get_resources():
-        with open('data/resources.json') as json_file:
-            resources = json.load(json_file)
-
-            res = {}
-            for i in resources:
-                res[i] = resources[i]
-
-            return res
-
-    def get_timecarddates():
-        with open('data/timecard_dates.json') as json_file:
-            timecard_dates = json.load(json_file)
-
-            return timecard_dates
-
-    return dict(check_calendar=check_calendar, get_main=get_main, get_about=get_about, get_videos=get_videos, get_officers=get_officers, get_resources=get_resources, get_timecarddates=get_timecarddates)
+    return dict(check_calendar=check_calendar)
     
-
 if __name__ == '__main__':
     app.run(debug=True, host='0.0.0.0', port=3000)

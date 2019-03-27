@@ -6,8 +6,8 @@
             <div class="timecard-content">
                 <div class="timecard-links">
                     <a href="/timecard.svg" target="timecard">All Time</a>
-                    {% for i in range(0, get_timecarddates()|length) %}
-                    | <a href="/timecard.svg?start={{ get_timecarddates()[i]['start'] }}&end={{ get_timecarddates()[i]['end'] }}" target="timecard">{{ get_timecarddates()[i]['quarter'] }}</a>
+                    {% for i in range(0, page_data['count']) %}
+                    | <a href="/timecard.svg?start={{ page_data['dates'][i]['start'] }}&end={{ page_data['dates'][i]['end'] }}" target="timecard">{{ page_data['dates'][i]['quarter'] }}</a>
                     {% endfor %}
                 </div>
                 <div class="timecard">
