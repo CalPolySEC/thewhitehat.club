@@ -1,3 +1,5 @@
+######## IMPORTS ########
+
 import os
 import json
 import requests
@@ -171,13 +173,8 @@ version = 1
 apiurl = '/api/' + 'v' + str(version)
 
 @app.route(apiurl, methods=['GET'])
-def api_root() -> Response:
-    message = "Welcome to White Hat's API!"
-    data = None
-    return jsonify({"message": message, "data": data, "status": 200})
-
 @app.route(apiurl + '/', methods=['GET'])
-def api_root2() -> Response:
+def api_root() -> Response:
     message = "Welcome to White Hat's API!"
     data = None
     return jsonify({"message": message, "data": data, "status": 200})
@@ -234,6 +231,8 @@ def api(endpoint):
         return jsonify({"endpoint": endpoint, "error": "'" + filename + "': invalid json"}), 404
     except:
         return jsonify({"endpoint": endpoint, "error": "internal error"}), 500
+
+### API Endpoint-related Functions ###
 
 def getEndpoints():
     endpoints = []
@@ -354,7 +353,7 @@ def getStatus():
 def page_not_found(e):
     return render_template('404.html'), 404
 
-######## Utilities ########
+######## Utility Functions ########
 
 def tokenreauth():
     url = 'https://www.googleapis.com/oauth2/v4/token'
