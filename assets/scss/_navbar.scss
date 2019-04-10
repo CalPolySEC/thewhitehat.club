@@ -1,3 +1,6 @@
+// Number of navigation tabs to display inline in navbar
+$nav-pages: 8;
+
 .navbar {
 	height: $menu-height;
 	
@@ -7,7 +10,7 @@
 
 	// CSS Grid
 	display: grid;
-	grid-template-columns: repeat(7, 1fr);
+	grid-template-columns: repeat($nav-pages, 1fr);
 	grid-template-rows: $menu-height;
 
 	text-align: center;
