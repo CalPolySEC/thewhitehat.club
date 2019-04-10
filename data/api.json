@@ -49,5 +49,9 @@
     "status": {
         "message": "Lab Status",
         "function": "getStatus()"
+    },
+    "corporate": {
+        "message": "Corporate Page Content",
+        "file": "data/corporate.json"
     }
 }

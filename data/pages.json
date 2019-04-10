@@ -7,6 +7,7 @@
         "resources",
         "signup",
         "visit",
-        "timecard"
+        "timecard",
+        "corporate"
     ]
 }
