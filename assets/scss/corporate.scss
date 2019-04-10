@@ -1,1 +1,93 @@
 @import 'style';
+
+#landing-bg {
+    background: url('/landing.jpg')  no-repeat center center fixed;
+	background-size: cover;
+    height: calc(100vh - 2 * 7vh);
+}
+
+.corporate-container {
+	position: absolute;
+	top: 7vh;
+	z-index: 0;
+	width: 60vw;
+	height: calc(100vh - 2 * 7vh);
+	
+	display: flex;
+	flex-direction: column;
+	background: $light-bg-color;
+
+	overflow-y: scroll;
+	overflow-x: hidden;
+}
+
+@media screen
+	and (max-width: 828px)
+	and (min-width: 320px) {
+
+    .corporate-container {
+        height: calc((var(--vh, 1vh) * 100) - 2.3 * (var(--vh, 1vh) * 7)); // ensure same value as $menu-height (NEEDED FOR IOS SAFARI)
+    }
+}
+
+.wh-logo {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 14vh;
+	
+	svg {
+		height: 14vh;
+		transition: all 0.75s;
+	}
+
+	// Rollover Animation
+    &:hover {
+		svg {
+        	transform: scale(1.1);
+			overflow: hidden;
+		}
+    }
+}
+
+.corporate-body {
+	height: 100%;
+	width: 100%;
+	transition: all 0.75s;
+
+	.corporate-group {
+		display: grid;
+		padding-left: 1.5vw;
+		padding-right: 1.5vw;
+
+		h1 {
+			text-align: left;
+			padding-left: 0.5vw;
+			color: white;
+			text-shadow: 6px 3px 7px rgba(0,0,0,0.5);
+			& > strong {
+				font-weight: 700px;
+				font-size: 1.35rem;
+			}
+		}
+
+		li {
+			padding-top: 0.5vh;
+			padding-bottom: 0.5vh;
+
+			color: white;
+			font-weight: 100px;
+			font-size: 1rem;
+			text-shadow: 6px 3px 7px rgba(0,0,0,0.5);
+		
+			a {
+				font-weight: bold;
+				color: white;
+
+				&:visited {
+					color: white;
+				}
+			}
+		}
+	}
+}

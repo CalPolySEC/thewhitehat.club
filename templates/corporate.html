@@ -2,8 +2,16 @@
 {% block body %}
     <div class="content">
         <div class="content" id="landing-bg"></div>
-        <div id="welcome-bar">
-            <h1 id="main">{{ page_data['message'] }}</h1>
+        <div class="corporate-container">
+            <div class="wh-logo">
+                {% include 'includes/logo.svg' %}
+            </div>
+            <div id="corporate-contact">
+                <button>test</button>
+            </div>
+            <div class="corporate-body">
+                <h1 id="main">{{ page_data['message'] }}</h1>
+            </div>
          </div>
     </div>
 {% endblock %}
