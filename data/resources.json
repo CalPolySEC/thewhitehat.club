@@ -144,5 +144,12 @@
             "link": "https://www.amazon.com/Web-Application-Hackers-Handbook-Exploiting/dp/1118026470",
             "description": "a great resource on discovering, exploiting, and preventing web application security flaws! This book goes through different techniques for attacking and defending web applications, including how to utilize cross-domain integration techniques, UI redress, HTTP parameter pollution, and more!"
         }
+    ],
+    "Talks": [
+        {
+            "name": "VMware Security Careers",
+            "link": "/vmware-security_careers.pdf",
+            "description": "If you are interested in security but don't know what career you might want to go into, this is a great resource to use!"
+        }
     ]
 }

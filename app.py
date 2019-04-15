@@ -106,6 +106,10 @@ def js(file_name):
         return app.send_static_file('sw' + '.js')
     return app.send_static_file('js/' + file_name + '.js')
 
+@app.route('/<file_name>.pdf')
+def pdf(file_name):
+    return app.send_static_file('resources/' + file_name + '.pdf')
+
 @app.route('/timecard.svg')
 def timecard_image():
     range_start = get_date_or_none(request.args, 'start')
