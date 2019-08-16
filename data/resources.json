@@ -106,7 +106,9 @@
             "name": "Cyber Threat Map",
             "link": "https://cybermap.kaspersky.com",
             "description": "a real-time visualization of cyber attacks and malware threats as they are detected by Kaspersky Anti-Virus solutions."
-        },
+        }
+    ],
+    "Interactive Challenges": [
         {
             "name": "ImmersiveLabs Cyber Academy",
             "link": "https://dca.immersivelabs.online",
@@ -126,11 +128,6 @@
             "name": "VulnHub",
             "link": "https://www.vulnhub.com/",
             "description": "a system of challenges stored within virtual machines that allow anyone to gain practical 'hands-on' experience in digital security, computer software, and network administration."
-        },
-        {
-            "name": "Cyber Security Education and Training Resources for Veterans",
-            "link": "https://onlinedegrees.und.edu/masters-cyber-security/cyber-security-education-training-resources-veterans/",
-            "description": "a great resource for veterans and non-veterans alike, contains lots of information about careers in cybersecurity."
         }
     ],
     "Cool Security Books": [
@@ -150,11 +147,16 @@
             "description": "a great resource on discovering, exploiting, and preventing web application security flaws! This book goes through different techniques for attacking and defending web applications, including how to utilize cross-domain integration techniques, UI redress, HTTP parameter pollution, and more!"
         }
     ],
-    "Talks": [
+    "Cybersecurity Careers": [
         {
             "name": "VMware Security Careers",
             "link": "/vmware-security_careers.pdf",
             "description": "If you are interested in security but don't know what career you might want to go into, this is a great resource to use!"
+        },
+        {
+            "name": "Cyber Security Education and Training Resources for Veterans",
+            "link": "https://onlinedegrees.und.edu/masters-cyber-security/cyber-security-education-training-resources-veterans/",
+            "description": "a great resource for veterans and non-veterans alike, contains lots of information about careers in cybersecurity."
         }
     ]
 }
