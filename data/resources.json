@@ -126,6 +126,11 @@
             "name": "VulnHub",
             "link": "https://www.vulnhub.com/",
             "description": "a system of challenges stored within virtual machines that allow anyone to gain practical 'hands-on' experience in digital security, computer software, and network administration."
+        },
+        {
+            "name": "Cyber Security Education and Training Resources for Veterans",
+            "link": "https://onlinedegrees.und.edu/masters-cyber-security/cyber-security-education-training-resources-veterans/",
+            "description": "a great resource for veterans and non-veterans alike, contains lots of information about careers in cybersecurity."
         }
     ],
     "Cool Security Books": [
