@@ -4,6 +4,9 @@
 	z-index: 1;
 	width: 65vw;
 	height: calc(100vh - 2 * 7vh);
+    
+    overflow-y: scroll;
+    overflow-x: hidden;
 	
 	display: flex;
 	flex-direction: column;
