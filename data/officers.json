@@ -6,8 +6,8 @@
     },
     "vicepresident": {
         "position": "Vice President",
-        "name": "Nicole Anderson-Au",
-        "image": "nicole.jpg"
+        "name": "Stephen Parkinson",
+        "image": "stephen.jpg"
     },
     "archivist": {
         "position": "Archivist",
@@ -16,8 +16,8 @@
     },
     "publicity": {
         "position": "Publicity",
-        "name": "Austin Shin",
-        "image": "austin.jpg"
+        "name": "Anna Kelly",
+        "image": "anna.jpg"
     },
     "socialchair": {
         "position": "Social Chair",
@@ -26,8 +26,8 @@
     },
     "treasurer": {
         "position": "Treasurer",
-        "name": "Ethan Goldfarb",
-        "image": "ethan.jpg"
+        "name": "Aaron Lampert",
+        "image": "aaron.jpg"
     },
     "ctfmaster": {
         "position": "CTF Master",
@@ -36,8 +36,8 @@
     },
     "assistantctf": {
         "position": "Assistant CTF Master",
-        "name": "Donnie Sanchez",
-        "image": "donnie.jpg"
+        "name": "Matthew Lewis",
+        "image": "matthew.jpg"
     },
     "hardware": {
         "position": "Hardware Outreach",
@@ -46,12 +46,27 @@
     }, 
     "webmaster": {
         "position": "Web Master",
-        "name": "Jon Prentice",
-        "image": "jon.jpg"
+        "name": "Steven Fosmark",
+        "image": "steven.jpg"
     },
     "sysadmin": {
         "position": "SysAdmin",
-        "name": "Stephen Parkinson",
-        "image": "stephen.jpg"
+        "name": "Jon Prentice",
+        "image": "jon.jpg"
+    },
+    "corporate": {
+        "position": "Corporate Outreach",
+        "name": "Tony Bone",
+        "image": "tony.jpg"
+    },
+    "corporate1": {
+        "position": "Corporate Outreach",
+        "name": "Reesa John",
+        "image": "reesa.jpg"
+    },
+    "techlead": {
+        "position": "Tech Team Lead",
+        "name": "Nicole Anderson-Au",
+        "image": "nicole.jpg"
     }
 }
