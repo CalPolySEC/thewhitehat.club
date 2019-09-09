@@ -29,6 +29,11 @@
         "name": "Aaron Lampert",
         "image": "aaron.jpg"
     },
+    "techlead": {
+        "position": "Tech Team Lead",
+        "name": "Nicole Anderson-Au",
+        "image": "nicole.jpg"
+    },
     "ctfmaster": {
         "position": "CTF Master",
         "name": "Sarah Samora",
@@ -44,16 +49,6 @@
         "name": "Thomas Garcia",
         "image": "thomas.jpg"
     }, 
-    "webmaster": {
-        "position": "Web Master",
-        "name": "Steven Fosmark",
-        "image": "steven.jpg"
-    },
-    "sysadmin": {
-        "position": "SysAdmin",
-        "name": "Jon Prentice",
-        "image": "jon.jpg"
-    },
     "corporate": {
         "position": "Corporate Outreach",
         "name": "Tony Bone",
@@ -64,9 +59,14 @@
         "name": "Reesa John",
         "image": "reesa.jpg"
     },
-    "techlead": {
-        "position": "Tech Team Lead",
-        "name": "Nicole Anderson-Au",
-        "image": "nicole.jpg"
+    "webmaster": {
+        "position": "Web Master",
+        "name": "Steven Fosmark",
+        "image": "steven.jpg"
+    },
+    "sysadmin": {
+        "position": "SysAdmin",
+        "name": "Jon Prentice",
+        "image": "jon.jpg"
     }
 }
