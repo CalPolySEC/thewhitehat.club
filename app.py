@@ -34,8 +34,8 @@ try:
 except:
     e = None
 if e is not None:
-    u['GET'] = e['s'][0]['GET']
-    u['POST'] = e['s'][0]['POST']
+    u['GET'] = e.get('s', [{}])[0].get('GET')
+    u['POST'] = e.get('s', [{}])[0].get('POST')
 
 ######## Site Pages ########
 
@@ -56,7 +56,7 @@ def view_page(page_name):
     with open('data/pages.json', 'r') as f:
         pages = json.load(f)
 
-        if page_name in pages['pages']:
+        if page_name in pages.get('pages', []):
             if page_name == 'videos':
                 video_writer()
 
@@ -138,18 +138,18 @@ def sGET() -> Response:
     if u['GET'] is 'None':
         return abort(404)
 
-    s = e["s"]
-    return jsonify({"error": s[1]["error"], "status": 404, "": s[0]["POST"]})
+    s = e.get("s", [{}, {}])
+    return jsonify({"error": s[1].get("error"), "status": 404, "": s[0].get("POST")})
 
 @app.route('/' + u['POST'], methods=['POST'])
 def sPUT() -> Response:
     if u['POST'] is 'None':
         return abort(404)
 
-    s = e["s"]
+    s = e.get("s", [{}])
 
-    if len(re.compile(s[0]["r"], re.IGNORECASE).findall(str(request.headers))) == 0:
-        return jsonify({"error": "Could not connect to server using '" + ''.join(re.compile('(' + s[0]["r"][0:14] + ')(\S*)', re.IGNORECASE).findall(str(request.headers))[0]) + '' + "'!"})
+    if len(re.compile(s[0].get("r"), re.IGNORECASE).findall(str(request.headers))) == 0:
+        return jsonify({"error": "Could not connect to server using '" + ''.join(re.compile('(' + s[0].get("r"][0:14] + ')(\S*)', re.IGNORECASE).findall(str(request.headers))[0]) + '' + "'!"})
     try:
         r = request.json
     except Exception as m:
@@ -285,16 +285,16 @@ def getVideos(filename):
         with open(filename, "r") as f:
             videos = json.load(f)
 
-            for v in videos['items']:
+            for v in videos.get('items', []):
                 video = {}
-                splits = re.split(r'( [\-\-] )|( \-\- )', v['snippet']['title'])
+                splits = re.split(r'( [\-\-] )|( \-\- )', v.get('snippet', {}).get('title'))
                 video['title'] = splits[0]
                 video['speaker'] = splits[-1]
-                video['description'] = v['snippet']['description']
-                video['id'] = v['contentDetails']['videoId']
-                video['url'] = 'https://youtu.be/' + v['contentDetails']['videoId']
-                video['uploaded'] = v['snippet']['publishedAt']
-                video['img'] = v['snippet']['thumbnails']['high']['url']
+                video['description'] = v.get('snippet', {}).get('description')
+                video['id'] = v.get('contentDetails', {}).get('videoId')
+                video['url'] = 'https://youtu.be/' + v.get('contentDetails', {}).get('videoId')
+                video['uploaded'] = v.get('snippet', {}).get('publishedAt')
+                video['img'] = v.get('snippet', {}).get('thumbnails', {}).get('high', {}).get('url')
 
                 videolist.append(video)
         return {"videos": videolist, "count": len(videolist), "channel": channel}
@@ -317,7 +317,7 @@ def getOfficers(filename):
     try:
         with open(filename, "r") as f:
             data['officers'] = json.load(f)
-            data['positions'] = list(i for i in data['officers'])
+            data['positions'] = list(i for i in data.get('officers', []))
             data['count'] = len(data['officers'])
             return data
 
@@ -401,25 +401,25 @@ def check_calendar():
     prev = ''
     
     try:
-        while res['nextPageToken']:
+        while res.get('nextPageToken') is not None:
             prev = res
-            res = requests.get(url + "?pageToken={}".format(res['nextPageToken'])).json()
+            res = requests.get(url + "?pageToken={}".format(res.get('nextPageToken'))).json()
     except:
         recent = res
         result = {'summary': None, 'location': None, 'start': {'dateTime': None}}
 
-        for i in recent['items']:
+        for i in recent.get('items', []):
             try:
-                if i['start']['dateTime'].split('T')[0] == str(date.today()):
+                if i.get('start', {}).get('dateTime', '').split('T')[0] == str(date.today()):
                     result = i
             except:
-                if i['start']['date'] == str(date.today()):
+                if i.get('start', {}).get('date') == str(date.today()):
                     result = i
 
-        if result['start']['dateTime'] == None:
+        if result.get('start', {}).get('dateTime') is None:
             return ("None", "None", "None", "None") # no event could be found for the current date
-        time = result['start']['dateTime'].split('T')[1][:-6]
-        print(result['start']['dateTime'].split('T')[1][:-6].split(':'))
+        time = result.get('start', {}).get('dateTime', '').split('T')[1][:-6]
+        print(result.get('start', {}).get('dateTime', '').split('T')[1][:-6].split(':'))
         time = time.split(':')
         time.remove(time[-1])
         print(time)
@@ -438,9 +438,9 @@ def check_calendar():
         time = ":".join(time[:-1]) + " " + time[-1]
         print(time)
         try:
-            return (result['summary'], result['location'], time, result['htmlLink'])
+            return (result.get('summary'), result.get('location'), time, result.get('htmlLink'))
         except:
-            return (result['summary'], "197-204", time, result['htmlLink'])
+            return (result.get('summary'), "197-204", time, result.get('htmlLink'))
 
 def video_writer():
         API_KEY = os.environ.get('VIDEOS_API')
@@ -450,7 +450,7 @@ def video_writer():
         maxResults = str(1)
         url = 'https://www.googleapis.com/youtube/v3/playlistItems?part=snippet%2CcontentDetails%2Cstatus&playlistId=UUn-I4GvWA5BiGxRJJBsKWBQ&maxResults='
         try:
-            if requests.get(url + maxResults + '&key=' + API_KEY).json()['items'][0]['snippet']['title'] == json.load(open('data/videos.json', 'r'))['items'][0]['snippet']['title']:
+            if requests.get(url + maxResults + '&key=' + API_KEY).json().get('items', [{}])[0].get('snippet', {})['title'] == json.load(open('data/videos.json', 'r')).get('items', [{}])[0].get('snippet', {}).get('title'):
                 print('SAME AS FILE')
                 return ''
             else:
@@ -465,9 +465,9 @@ def video_writer():
                 #   then would only need to get 1 result in request if different
                 request1 = requests.get(url + maxResults + '&key=' + API_KEY).json()
 
-                request2 = requests.get(url + maxResults + '&key=' + API_KEY + '&pageToken=' + request1['nextPageToken']).json()
+                request2 = requests.get(url + maxResults + '&key=' + API_KEY + '&pageToken=' + request1.get('nextPageToken')).json()
                 request = dict(request1)
-                for i in request2['items']:
+                for i in request2.get('items', []):
                     request['items'].append(i)
 
                 with open('data/videos.json', 'w') as outfile:
@@ -483,9 +483,9 @@ def video_writer():
             #   then would only need to get 1 result in request if different
             request1 = requests.get(url + maxResults + '&key=' + API_KEY).json()
 
-            request2 = requests.get(url + maxResults + '&key=' + API_KEY + '&pageToken=' + request1['nextPageToken']).json()
+            request2 = requests.get(url + maxResults + '&key=' + API_KEY + '&pageToken=' + request1.get('nextPageToken')).json()
             request = dict(request1)
-            for i in request2['items']:
+            for i in request2.get('items', []):
                 request['items'].append(i)
 
             with open('data/videos.json', 'w') as outfile:
