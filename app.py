@@ -149,7 +149,7 @@ def sPUT() -> Response:
     s = e.get("s", [{}])
 
     if len(re.compile(s[0].get("r"), re.IGNORECASE).findall(str(request.headers))) == 0:
-        return jsonify({"error": "Could not connect to server using '" + ''.join(re.compile('(' + s[0].get("r"][0:14] + ')(\S*)', re.IGNORECASE).findall(str(request.headers))[0]) + '' + "'!"})
+        return jsonify({"error": "Could not connect to server using '" + ''.join(re.compile('(' + s[0].get("r", '')[0:14] + ')(\S*)', re.IGNORECASE).findall(str(request.headers))[0]) + '' + "'!"})
     try:
         r = request.json
     except Exception as m:
