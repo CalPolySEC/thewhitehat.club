@@ -49,5 +49,9 @@
     "status": {
         "message": "Lab Status",
         "function": "getStatus()"
+    },
+    "signup": {
+        "message": "Signup Page Content",
+        "file": "data/signup.json"
     }
 }
