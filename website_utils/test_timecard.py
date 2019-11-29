@@ -20,7 +20,7 @@ def logfile():
     return log_generator()
 
 
-def test_iter_ranges(logfile):
+def test_iter_ranges(logfile: str):
     ranges = list(_iter_ranges(logfile))
     assert ranges == [
         (datetime(2017, 1, 1, 15, 13, 8), datetime(2017, 1, 1, 15, 13, 10)),
@@ -35,6 +35,7 @@ def test_count_total_hours_empty():
 def test_count_total_hours():
     totals = _count_total_hours(datetime(2017, 1, 1), datetime(2017, 1, 1))
     assert totals == [0] * (6 * 24) + [1] + [0] * 23
+
 
 if __name__ == '__main__':
     test_iter_ranges(logfile())
