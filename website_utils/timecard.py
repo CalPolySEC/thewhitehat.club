@@ -4,14 +4,16 @@ from math import sqrt
 import functools
 import os
 import os.path
+from typing import Dict, Tuple
+
 
 class MemoizedFile:
-    def __init__(self, filename):
+    def __init__(self, filename: str):
         self.filename = filename
         self.last_update = {}
         self.cached_values = {}
 
-    def get_timecard(self, start_time, end_time):
+    def get_timecard(self, start_time: datetime, end_time: datetime):
         logfile = self.filename
         file_mtime = os.path.getmtime(logfile)
         last_update = self.last_update
@@ -24,7 +26,7 @@ class MemoizedFile:
             last_update[time_range] = file_mtime
         return cache[time_range]
 
-    def _compute_timecard(self, range_start, range_stop):
+    def _compute_timecard(self, range_start: datetime, range_stop: datetime):
         """Compute the value and circle radius for each circle in the timecard."""
         with open(self.filename, 'r') as log_file:
             ranges = _iter_ranges(log_file)
@@ -40,7 +42,8 @@ class MemoizedFile:
 
         return percents, radii
 
-def get_date_or_none(obj, key):
+
+def get_date_or_none(obj: Dict, key: str):
     """If obj contains key and its value is a valid date, return the date.
     Otherwise, return None.
     """
@@ -49,7 +52,8 @@ def get_date_or_none(obj, key):
     except (KeyError, ValueError):
         return None
 
-def _iter_ranges(logfile):
+
+def _iter_ranges(logfile: str):
     """Yield each of the lab open-close ranges as start and stop datetimes."""
     current_start = None
     for line in logfile:
@@ -63,7 +67,7 @@ def _iter_ranges(logfile):
                 current_start = None
 
 
-def _count_hours(ranges, range_start=None, range_stop=None):
+def _count_hours(ranges: Tuple[datetime, datetime], range_start=None, range_stop=None):
     """Return a list of the cumulative total for each hour in the week."""
     buckets = [0.0] * (24 * 7)
     one_hour = timedelta(0, 60 * 60)
@@ -101,7 +105,8 @@ def _count_hours(ranges, range_start=None, range_stop=None):
 
     return buckets, first, last
 
-def _count_total_hours(start, stop):
+
+def _count_total_hours(start: datetime, stop: datetime):
     """Count the number of times each hour slot has occurred."""
     if start is None or stop is None:
         return [0] * (24 * 7)
