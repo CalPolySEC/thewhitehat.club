@@ -1,5 +1,6 @@
 footer {
 	height: $menu-height; //same height as navbar
+	width: 100vw;
 	
 	background-color: $nav-bg;
 	
@@ -9,6 +10,8 @@ footer {
 	grid-auto-rows: minmax(100vh, auto);
 
 	overflow: hidden;
+	position: fixed;
+	bottom: 0;
 
 	#footer-left {
 		height: $menu-height;
