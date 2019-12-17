@@ -13,6 +13,14 @@ footer {
 	position: fixed;
 	bottom: 0;
 
+	//Scaling fonts
+	@media screen and (orientation: portrait) {
+		font-size: 2vw;
+	}
+	@media screen and (orientation: landscape) {
+		font-size: 2vh;
+	}
+
 	#footer-left {
 		height: $menu-height;
 		
@@ -81,7 +89,7 @@ footer {
 	
 				p {
 					padding-right: 1vw;
-					font-size: 1.5vh;
+					font-size: 1em;
 				}
 
 				// Rollover Animation
@@ -121,7 +129,7 @@ footer {
 	
 				p {
 					padding-right: 1vw;
-					font-size: 1.5vh;
+					font-size: 1em;
 				}
 				
 				// Rollover Animation
