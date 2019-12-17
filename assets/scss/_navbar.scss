@@ -96,9 +96,9 @@
 	}
 }
 
+// Change navbar to dropdown list when viewport width is small
 @media screen
-	and (max-width: 828px)
-	and (min-width: 320px) {
+	and (max-width: 828px) {
 	
 	.navbar .nav:not(:nth-child(1)):not(:last-child) {
 		display: none;
