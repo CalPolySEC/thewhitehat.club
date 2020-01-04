@@ -10,8 +10,9 @@
 	position: absolute;
 	top: 7vh;
 	z-index: 0;
-	width: 60vw;
-	height: calc(100vh - 2 * 7vh);
+	width: 65vw;
+	//height: calc(100vh - 2 * 7vh);
+	height: $full-height;
 	
 	display: flex;
 	flex-direction: column;
@@ -21,6 +22,7 @@
 	overflow-x: hidden;
 }
 
+/*
 @media screen
 	and (max-width: 828px)
 	and (min-width: 320px) {
@@ -29,6 +31,7 @@
         height: calc((var(--vh, 1vh) * 100) - 2.3 * (var(--vh, 1vh) * 7)); // ensure same value as $menu-height (NEEDED FOR IOS SAFARI)
     }
 }
+*/
 
 .wh-logo {
 	display: flex;
@@ -67,7 +70,7 @@
 			text-shadow: 6px 3px 7px rgba(0,0,0,0.5);
 			& > strong {
 				font-weight: 700px;
-				font-size: 1.35rem;
+				font-size: 1.5rem;
 			}
 		}
 
