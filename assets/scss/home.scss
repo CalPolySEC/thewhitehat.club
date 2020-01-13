@@ -8,6 +8,9 @@
     color: black;
     text-align: center;
     font-size: 2vw;
+    @media screen and (orientation: portriat) {
+        font-size: 2vh;
+    }
     $welcome-size: 5em;
     
     filter: drop-shadow(10px 10px 15px gray);
