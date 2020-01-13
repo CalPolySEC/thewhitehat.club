@@ -7,9 +7,9 @@
     background: white;
     color: black;
     text-align: center;
-    font-size: 2vw;
-    @media screen and (orientation: portriat) {
-        font-size: 2vh;
+    font-size: 2vh;
+    @media screen and (orientation: portrait) {
+        font-size: 2vw;
     }
     $welcome-size: 5em;
     
