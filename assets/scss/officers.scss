@@ -1,14 +1,11 @@
 @import 'style';
 .officer-container {
 	position: absolute;
-	//z-index: 1;
-	//width: 70vw;
 	width: -moz-fit-content;
 	width: -webkit-fit-content;
 	width: fit-content;
 	min-width: 200px;
-	//height: calc(100vh - 2 * 7vh);
-	height: 100vh - (2 * $menu-height);
+	height: $full-height;
     
     overflow-y: scroll;
     overflow-x: hidden;

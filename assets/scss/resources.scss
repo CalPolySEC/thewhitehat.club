@@ -3,7 +3,7 @@
 #landing-bg {
     background: url('/lab1.jpg')  no-repeat center center fixed;
 	background-size: cover;
-    height: calc(100vh - 2 * 7vh);
+    height: $full-height;
 }
 
 .resources-container {
@@ -11,7 +11,6 @@
 	top: 7vh;
 	z-index: 0;
 	width: 65vw;
-	//height: calc(100vh - 2 * 7vh);
 	height: $full-height;
 	
 	display: flex;

@@ -4,8 +4,7 @@
     top: 7vh;
     z-index: 0;
     width: 75vw;
-    //height: calc(100vh - 2 * 7vh);
-    height: 100vh - (2 * $menu-height);
+    height: $full-height;
 
     display: flex;
     flex-direction: column;
@@ -137,7 +136,6 @@
         img {
             max-width: 100%;
             max-height: 100%;
-            //width: 100%;
             background-position: top;
             background-size: cover;
             background-clip: border-box;

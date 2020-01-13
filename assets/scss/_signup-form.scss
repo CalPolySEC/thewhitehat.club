@@ -1,15 +1,10 @@
 .form-wrap {
     display: grid;
-    // flex-direction: column;
-    // justify-content: center;
-    // align-items: center;
     grid-template-rows: 1fr 1fr 2fr;
-    //height: calc(100vh - 15vh - 3*20px);
     height: -moz-min-content;
     height: -webkit-min-content;
     height: min-content;
-    //max-height: 80vh;
-    max-height: calc(100vh - 4 * 7vh);
+    max-height: calc(100vh - 4 * 7vh); // Make sure there's padding around the menus, because sometimes min-content is too generous with the space
     width: -moz-min-content;
     width: -webkit-min-content;
     width: min-content;
@@ -22,9 +17,6 @@
     position: absolute;
     overflow-y: scroll;
     overflow-x: hidden;
-
-    // Rollover Animation
-    // @include hover;
 
     #wh-logo {
         display: flex;
@@ -90,6 +82,7 @@
         justify-content: flex-end;
         align-content: flex-start;
         align-items: center;
+        cursor: pointer;
 
         object {
             padding-left: 5px;
@@ -97,6 +90,6 @@
         }
 
         // Rollover Animation
-        //@include hover;
+        @include hover;
     }
 }

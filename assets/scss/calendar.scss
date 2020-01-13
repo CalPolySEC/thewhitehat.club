@@ -3,7 +3,7 @@
 #landing-bg {
     background: url('/lab4.jpg')  no-repeat center center fixed;
     background-size: cover;
-    height: calc(100vh - 2 * 7vh);
+    height: $full-height;
 }
 
 iframe {
