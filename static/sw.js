@@ -9,7 +9,7 @@ if (STATUS) {
         '/app.js',
         '/fetch.js',
         '/promise.js',
-        //'/style.css', For testing. Uncomment when done messing with the stylesheets
+        '/style.css',
         '/Farray.otf',
         '/HKGrotesk-Bold.otf',
         '/HKGrotesk-Light.otf',
