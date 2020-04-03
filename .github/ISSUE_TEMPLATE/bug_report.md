@@ -3,7 +3,7 @@ name: Bug report
 about: Create a report to help us improve our website!
 title: ''
 labels: bug
-assignees: jon77p
+assignees: sjfoz1019
 
 ---
 
