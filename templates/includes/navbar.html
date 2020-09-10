@@ -17,3 +17,22 @@
 		<i class="fa fa-bars"></i>
 	</a></div>
 </header>
+
+<!-- Navbar Menu Toggle for Mobile -->
+<script>
+	function navMenu() {
+		var x = document.getElementsByClassName("nav");
+		var i;
+		for (i = 1; i < x.length - 1; i++) {
+			if ((x[i].childNodes[0].className === "brand") || (x[i].childNodes[0].className === "icon")) {
+				continue
+			} else {
+				if (x[i].className === "nav") {
+					x[i].className += " mobile";
+				} else {
+					x[i].className = "nav";
+				}
+			}
+		}
+	}
+</script>

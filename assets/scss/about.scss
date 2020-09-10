@@ -4,7 +4,7 @@
     top: 7vh;
     z-index: 0;
     width: 75vw;
-    height: calc(100vh - 2 * 7vh);
+    height: $full-height;
 
     display: flex;
     flex-direction: column;
@@ -14,6 +14,7 @@
     overflow-x: hidden;
 }
 
+/*
 @media screen
 	and (max-width: 828px)
 	and (min-width: 320px) {
@@ -22,6 +23,7 @@
         height: calc((var(--vh, 1vh) * 100) - 2.3 * (var(--vh, 1vh) * 7)); // ensure same value as $menu-height (NEEDED FOR IOS SAFARI)
     }
 }
+*/
 
 .about-content {
     height: 100%;
@@ -30,14 +32,27 @@
     z-index: 0;
 
     display: grid;
-    grid-template-areas:
-        "a a a a"
-        "b b b b"
-        "c d d d";
+    @media screen and (min-width: 829px) {
+        grid-template-areas:
+            "a a a a"
+            "b b b b"
+            "c d d d";
 
-    // position last about-section to be next to the officer image
-    div:nth-last-of-type(2) {
-        grid-area: c !important;
+        // position last about-section to be next to the officer image
+        div:nth-last-of-type(2) {
+            grid-area: c !important;
+        }
+    }
+
+    @media screen and (max-width: 828px) {
+        grid-template-areas:
+            "a"
+            "b"
+            "c"
+            "d";
+        div:nth-last-of-type(2) {
+            grid-area: c !important;
+        }
     }
 
     .groupimg-head {
@@ -57,6 +72,11 @@
             background-clip: border-box;
             background-origin: border-box;
             z-index: 1;
+
+            @media screen and (max-width: 828px), screen and (orientation: portrait){
+                width: 100%;
+                height: unset;
+            }
         }
     
         #groupimg-blurred {
@@ -69,6 +89,10 @@
             transform: scale(1.1);
             height: 22vh;
             width: 100vw;
+
+            @media screen and (max-width: 828px), screen and (orientation: portrait){
+                display: none;
+            }
         }
     }
 
@@ -82,17 +106,20 @@
             padding-right: 5px;
             h1 {
                 margin-top: 0px;
-                font: 5vh "Farray", sans-serif;
+                font: 2em "Farray", sans-serif;
+                font-size: max(2em, 3vh)
             }
     
             h2 {
-                font: 2.5vh "HK Grotesk Light", sans-serif;
+                font: 1em "HK Grotesk Light", sans-serif;
+                font-weight: bold;
                 margin-bottom: 0.5px;
+                font-size: max(1em, 2vh)
             }
     
             p {
                 margin: 0px;
-                font-size: 1.75vh;
+                font-size: max(0.75em, 1.75vh);
             }
     
             border-bottom: 3px solid $nav-bg;
@@ -109,7 +136,8 @@
         justify-content: center;
 
         img {
-            width: 100%;
+            max-width: 100%;
+            max-height: 100%;
             background-position: top;
             background-size: cover;
             background-clip: border-box;

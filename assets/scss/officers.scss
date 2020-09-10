@@ -1,9 +1,11 @@
 @import 'style';
 .officer-container {
 	position: absolute;
-	z-index: 1;
-	width: 65vw;
-	height: calc(100vh - 2 * 7vh);
+	width: -moz-fit-content;
+	width: -webkit-fit-content;
+	width: fit-content;
+	min-width: 200px;
+	height: $full-height;
     
     overflow-y: scroll;
     overflow-x: hidden;
@@ -14,6 +16,7 @@
 	background: $dark-bg-color;
 }
 
+/*
 @media screen
 	and (max-width: 828px)
 	and (min-width: 320px) {
@@ -22,6 +25,7 @@
         height: calc((var(--vh, 1vh) * 100) - 2.3 * (var(--vh, 1vh) * 7)); // ensure same value as $menu-height (NEEDED FOR IOS SAFARI)
     }
 }
+*/
 
 .officer-logo {
 	flex: auto;
@@ -67,10 +71,18 @@
 		flex: 1;
 		padding-top: 0.5em;
 		padding-bottom: 0.5em;
+		padding-left: 1em;
+		padding-right: 1em;
 		display: flex;
 		flex-direction: row;
 		align-items: center;
 		justify-content: left;
+		//adjust sizing for smaller devices
+		font-size: 1.5vw;
+		@media screen and (max-width: 828px) {
+			font-size: 2vw;
+			width: min-content;
+		}
 		div {
 			height: inherit;
 			flex: auto;
@@ -83,7 +95,7 @@
 			
 			& > strong {
 				font-weight: 700px;
-				font-size: 2vw;
+				font-size: 1.25em;
 			}
 		}
 		
@@ -93,15 +105,17 @@
 			margin: 0px;
 			color: white;
 			font-weight: 100px;
-			font-size: 1.5vw;
+			font-size: 1em;
 			text-shadow: 6px 3px 7px rgba(0,0,0,0.5);
 		}
 		
 		img {
 			box-sizing: border-box;
 			border-radius: 50%;
-			width: 80px;
-			height: 80px;
+			width: 10vw;
+			height: 10vw;
+			max-width: 80px;
+			max-height: 80px;
 			margin-left: 15px;
 			margin-right: 15px;
 			background: cover;

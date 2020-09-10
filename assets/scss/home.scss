@@ -1,1 +1,33 @@
 @import 'style';
+
+#welcome-bar {
+    position: absolute;
+    width: 100vw;
+    
+    background: white;
+    color: black;
+    text-align: center;
+    font-size: 2vh;
+    @media screen and (orientation: portrait) {
+        font-size: 2vw;
+    }
+    $welcome-size: 5em;
+    
+    filter: drop-shadow(10px 10px 15px gray);
+
+    transition: all 0.75s;
+
+    &:hover {
+        transform: scaleY(1.1);
+        overflow: hidden;
+    }
+}
+
+#main {
+    font: 6.25em "Farray", sans-serif;
+    margin: 0;
+}
+
+#mission {
+    font: 1.8em "HK Grotesk Light", sans-serif;
+}

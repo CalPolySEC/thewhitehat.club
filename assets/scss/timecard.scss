@@ -3,7 +3,7 @@
 #landing-bg {
     background: url('/lab1.jpg')  no-repeat center center fixed;
     background-size: cover;
-    height: calc(100vh - 2 * 7vh);
+    height: $full-height;
 }
 
 .timecard-container {
@@ -29,6 +29,7 @@
     overflow-x: hidden;
 }
 
+/*
 @media screen
 	and (max-width: 828px)
 	and (min-width: 320px) {
@@ -37,6 +38,7 @@
         height: calc((var(--vh, 1vh) * 100) - 2.3 * (var(--vh, 1vh) * 7)); // ensure same value as $menu-height (NEEDED FOR IOS SAFARI)
     }
 }
+*/
 
 .timecard-content {
     height: 90%;

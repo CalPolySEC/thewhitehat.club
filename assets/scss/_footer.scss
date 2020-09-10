@@ -1,5 +1,6 @@
 footer {
 	height: $menu-height; //same height as navbar
+	width: 100vw;
 	
 	background-color: $nav-bg;
 	
@@ -9,6 +10,16 @@ footer {
 	grid-auto-rows: minmax(100vh, auto);
 
 	overflow: hidden;
+	position: fixed;
+	bottom: 0;
+
+	//Scaling fonts
+	@media screen and (orientation: portrait) {
+		font-size: 2vw;
+	}
+	@media screen and (orientation: landscape) {
+		font-size: 2vh;
+	}
 
 	#footer-left {
 		height: $menu-height;
@@ -25,12 +36,10 @@ footer {
 		text-align: left;
 		
 		p {
-			// font-size: 2vh;
 			font-size: 1.25em;
 		}
 
 		a {
-			// font-size: 1.5vh;
 			font-size: 1em;
 		}
 
@@ -78,7 +87,7 @@ footer {
 	
 				p {
 					padding-right: 1vw;
-					font-size: 1.5vh;
+					font-size: 1em;
 				}
 
 				// Rollover Animation
@@ -118,7 +127,7 @@ footer {
 	
 				p {
 					padding-left: 1vw;
-					font-size: 1.5vh;
+					font-size: 1em;
 				}
 				
 				// Rollover Animation

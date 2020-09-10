@@ -7,7 +7,7 @@
     -webkit-filter: blur(7px);
     z-index: -1;
     transform: scale(1.1);
-    height: calc(100vh - 2 * 7vh);
+    height: $full-height;
 }
 
 .dark-bar {

@@ -1,22 +1,22 @@
 .form-wrap {
     display: grid;
-    // flex-direction: column;
-    // justify-content: center;
-    // align-items: center;
     grid-template-rows: 1fr 1fr 2fr;
-    height: calc(100vh - 15vh - 3*20px);
-    width: 45vw;
-    min-width: 20em;
+    height: -moz-min-content;
+    height: -webkit-min-content;
+    height: min-content;
+    max-height: calc(100vh - 4 * 7vh); // Make sure there's padding around the menus, because sometimes min-content is too generous with the space
+    width: -moz-min-content;
+    width: -webkit-min-content;
+    width: min-content;
+    min-width: 30em;
     max-width: 85vw;
     box-shadow: 0px 0px 10px #afc0d9;
     background-color: #fff;
     padding: 1em;
     border-radius: .25rem;
     position: absolute;
-    overflow: auto;
-
-    // Rollover Animation
-    // @include hover;
+    overflow-y: scroll;
+    overflow-x: hidden;
 
     #wh-logo {
         display: flex;
@@ -53,6 +53,7 @@
         padding: 4px;
         position: absolute;
         right: 0px;
+        width: 50%;
     }
     
     input[type=submit] {
@@ -65,9 +66,11 @@
         font-family: inherit;
         font-size: inherit;
         padding: 8px 15px;
+        width: 90%;
+        justify-self: center;
 
         // Rollover Animation
-        //@include hover;
+        @include hover;
     }
 
     #mailchimp {
@@ -79,6 +82,7 @@
         justify-content: flex-end;
         align-content: flex-start;
         align-items: center;
+        cursor: pointer;
 
         object {
             padding-left: 5px;
@@ -86,6 +90,6 @@
         }
 
         // Rollover Animation
-        //@include hover;
+        @include hover;
     }
 }
