@@ -48,11 +48,11 @@
     		justify-content: center;
 			color: white;
 			
-			font-size: 1.4em;
+			font-size: max(1.4em, 2.5vh);
 			text-decoration: none;
 
 			i {
-				font-size: 1.65em;
+				font-size: max(1.65em, 3vh);
 			}
 			
 			.icon {

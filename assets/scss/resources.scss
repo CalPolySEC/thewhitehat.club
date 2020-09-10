@@ -4,6 +4,9 @@
     background: url('/lab1.jpg')  no-repeat center center fixed;
 	background-size: cover;
     height: $full-height;
+    @media screen and (orientation: portrait) {
+		display: none;
+	}
 }
 
 .resources-container {
@@ -12,6 +15,9 @@
 	z-index: 0;
 	width: 65vw;
 	height: $full-height;
+	@media screen and (orientation: portrait) {
+		width: 100vw;
+	}
 	
 	display: flex;
 	flex-direction: column;
@@ -67,9 +73,10 @@
 			padding-left: 0.5vw;
 			color: white;
 			text-shadow: 6px 3px 7px rgba(0,0,0,0.5);
+			font-size: max(1.5rem, 2.5vh);
 			& > strong {
 				font-weight: 700px;
-				font-size: 1.5rem;
+				font-size: max(1.5rem, 2.5vh);
 			}
 		}
 
@@ -79,7 +86,7 @@
 
 			color: white;
 			font-weight: 100px;
-			font-size: 1rem;
+			font-size: max(1rem, 1.75vh);
 			text-shadow: 6px 3px 7px rgba(0,0,0,0.5);
 		
 			a {
