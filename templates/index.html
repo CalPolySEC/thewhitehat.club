@@ -7,48 +7,4 @@
             <h2 id="mission">{{ page_data['mission'] }}</h2>
         </div>
     </div>
-    <!-- NOTIFICATIONS -->
-    <script>
-        var calendar = "{{ check_calendar() }}".split("&#39;");
-        calendar = [calendar[1], calendar[3], calendar[5], calendar[7]];
-
-        $('document').ready(function() {
-            var event = calendar[0];
-            var loc = calendar[1];
-            var time = calendar[2];
-            var url = calendar[3];
-            if (event != "None" && loc != "None" && time != "None" && url != "None") {
-                $.notify.addStyle('whnotify', {
-                    html: "<div><span data-notify-text/></div>",
-                    classes: {
-                        base: {
-                            "white-space": "nowrap",
-                            "background-color": "rgb(196, 84, 108)",
-                            "padding-top": "10px",
-                            "padding-bottom": "10px",
-                            "position": "absolute",
-                            "margin-top": "0.5vh",
-                            "width": "100vw",
-                            "text-align": "center"
-                        },
-                        event: {
-                            "color": "white",
-                        }
-                    },
-                });
-                $("#notif").notify(event + " | " + "Location: " + loc + " | " + "Today at: " + time, {
-                    style: 'whnotify',
-                    className: "event",
-                    position: "top left",
-                    autoHide: false,
-                    arrowShow: false
-                });
-            }
-        });
-
-        $(document).on('click', '.notifyjs-whnotify-base', function() {
-            var url = calendar[3];
-            $(this).trigger(open(url))
-        })
-    </script>
 {% endblock %}

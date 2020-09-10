@@ -2,8 +2,8 @@
 name: Feature request
 about: Suggest a new addition/enhancement for our website!
 title: ''
-labels: enhancement
-assignees: jon77p
+labels: enhancement, suggestion
+assignees: sjfoz1019
 
 ---
 

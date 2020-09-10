@@ -73,7 +73,7 @@ footer {
 			display: grid;
 			grid-template-columns: 1fr 1fr 1fr;
 
-			#ctftime {
+			#discord {
 				display: flex;
 				justify-content: center;
 				align-items: center;
@@ -113,7 +113,7 @@ footer {
 				@include hover;
 			}
 	
-			#facebook {
+			#slack {
 				display: flex;
 				justify-content: center;
 				align-items: center;
@@ -126,7 +126,7 @@ footer {
 				}
 	
 				p {
-					padding-right: 1vw;
+					padding-left: 1vw;
 					font-size: 1em;
 				}
 				
