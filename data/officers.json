@@ -1,28 +1,33 @@
 {
     "president": {
         "position": "President",
-        "name": "Kylan Stewart",
-        "image": "kylan.jpg"
-    },
-    "vicepresident": {
-        "position": "Vice President",
         "name": "Stephen Parkinson",
         "image": "stephen.jpg"
     },
+    "vicepresident": {
+        "position": "Vice President",
+        "name": "Veronica Pollock",
+        "image": "veronica.jpg"
+    },
     "archivist": {
         "position": "Archivist",
-        "name": "Jennifer Maunder",
-        "image": "jennifer.jpg"
+        "name": "Jaxon Haws",
+        "image": "jaxon.jpg"
+    },
+    "photographer": {
+        "position": "Photographer",
+        "name": "Andy Wittke",
+        "image": "andy.jpg"
     },
     "publicity": {
         "position": "Publicity",
-        "name": "Anna Kelly",
-        "image": "anna.jpg"
+        "name": "Samantha Soto",
+        "image": "sam.jpg"
     },
     "socialchair": {
         "position": "Social Chair",
-        "name": "Veronica Pollock",
-        "image": "veronica.jpg"
+        "name": "Tony Bone",
+        "image": "tony.jpg"
     },
     "treasurer": {
         "position": "Treasurer",
@@ -31,28 +36,28 @@
     },
     "techlead": {
         "position": "Tech Team Lead",
-        "name": "Nicole Anderson-Au",
-        "image": "nicole.jpg"
+        "name": "Natasha Ionova",
+        "image": "natasha.jpg"
     },
     "ctfmaster": {
         "position": "CTF Master",
-        "name": "Sarah Samora",
-        "image": "sarah.jpg"
+        "name": "Thomas Garcia",
+        "image": "thomas.jpg"
     },
     "assistantctf": {
         "position": "Assistant CTF Master",
-        "name": "Matthew Lewis",
-        "image": "matthew.jpg"
+        "name": "Otakar Andrysek",
+        "image": "otakar.jpg"
     },
     "hardware": {
         "position": "Hardware Outreach",
-        "name": "Thomas Garcia",
-        "image": "thomas.jpg"
+        "name": "Kedwin Chen",
+        "image": "kedwin.jpg"
     }, 
     "corporate": {
         "position": "Corporate Outreach",
-        "name": "Tony Bone",
-        "image": "tony.jpg"
+        "name": "Jennifer Maunder",
+        "image": "jennifer.jpg"
     },
     "corporate1": {
         "position": "Corporate Outreach",
@@ -65,7 +70,7 @@
         "image": "steven.jpg"
     },
     "sysadmin": {
-        "position": "SysAdmin",
+        "position": "SysAdmin + Malware Team Lead",
         "name": "Jon Prentice",
         "image": "jon.jpg"
     }
