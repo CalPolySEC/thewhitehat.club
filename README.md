@@ -4,7 +4,7 @@ This is a [Flask](http://flask.pocoo.org) app to run [https://thewhitehat.club](
 
 ----
 
-## Running the App (Development)
+## steps to run App (Development)
 
 1. To run the site, install virtualenv on your machine with:
 
