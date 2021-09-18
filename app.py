@@ -199,7 +199,7 @@ apiurl = '/api/' + 'v' + str(version)
 @app.route(apiurl, methods=['GET'])
 @app.route(apiurl + '/', methods=['GET'])
 def api_root() -> Response:
-    message = "Welcome to White Hat's API!"
+    message = "Welcome to CPSEC's API!"
     data = None
     return jsonify({"message": message, "data": data, "status": 200})
 
