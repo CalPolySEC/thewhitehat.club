@@ -1,77 +1,57 @@
 {
     "president": {
         "position": "President",
-        "name": "Stephen Parkinson",
-        "image": "stephen.jpg"
-    },
-    "vicepresident": {
-        "position": "Vice President",
-        "name": "Veronica Pollock",
-        "image": "veronica.jpg"
-    },
-    "archivist": {
-        "position": "Archivist",
         "name": "Jaxon Haws",
         "image": "jaxon.jpg"
     },
-    "photographer": {
-        "position": "Photographer",
-        "name": "Andy Wittke",
-        "image": "andy.jpg"
+    "vicepresident": {
+        "position": "Vice President",
+        "name": "Tian Wong",
+        "image": "tian.jpg"
+    },
+    "archivist": {
+        "position": "Archivist",
+        "name": "Vincent Pheng",
+        "image": "vincent.jpg"
     },
     "publicity": {
         "position": "Publicity",
-        "name": "Samantha Soto",
-        "image": "sam.jpg"
+        "name": "Viana Chow",
+        "image": "viana.jpg"
     },
     "socialchair": {
         "position": "Social Chair",
-        "name": "Tony Bone",
-        "image": "tony.jpg"
+        "name": "Brandon Tat",
+        "image": "brandon.jpg"
     },
     "treasurer": {
         "position": "Treasurer",
-        "name": "Aaron Lampert",
-        "image": "aaron.jpg"
-    },
-    "techlead": {
-        "position": "Tech Team Lead",
-        "name": "Natasha Ionova",
-        "image": "natasha.jpg"
+        "name": "Jordan Chew",
+        "image": "jordan.jpg"
     },
     "ctfmaster": {
-        "position": "CTF Master",
-        "name": "Thomas Garcia",
-        "image": "thomas.jpg"
+        "position": "CTF Team Lead",
+        "name": "Lisa Li",
+        "image": "Lisa.jpg"
     },
     "assistantctf": {
-        "position": "Assistant CTF Master",
-        "name": "Otakar Andrysek",
-        "image": "otakar.jpg"
+        "position": "Assistant CTF Team Lead",
+        "name": "Shemely Sarain",
+        "image": "shemely.jpg"
     },
-    "hardware": {
-        "position": "Hardware Outreach",
-        "name": "Kedwin Chen",
-        "image": "kedwin.jpg"
-    }, 
     "corporate": {
         "position": "Corporate Outreach",
-        "name": "Jennifer Maunder",
-        "image": "jennifer.jpg"
-    },
-    "corporate1": {
-        "position": "Corporate Outreach",
-        "name": "Reesa John",
-        "image": "reesa.jpg"
+        "name": "Steven Ngo",
+        "image": "steven_n.jpg"
     },
     "webmaster": {
         "position": "Web Master",
-        "name": "Steven Fosmark",
-        "image": "steven.jpg"
+        "name": "Stephen Parkinson",
+        "image": "stephen.jpg"
     },
     "sysadmin": {
-        "position": "SysAdmin + Malware Team Lead",
-        "name": "Jon Prentice",
-        "image": "jon.jpg"
+        "position": "SysAdmin",
+        "name": "Samantha Soto",
+        "image": "sam.jpg"
     }
 }
