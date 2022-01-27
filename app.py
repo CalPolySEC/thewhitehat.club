@@ -4,9 +4,8 @@ import os
 import json
 import requests
 import re
-from datetime import date, datetime
-import time
-from flask import Flask, Response, request, render_template, jsonify, make_response, abort, redirect
+from datetime import date
+from flask import Flask, Response, request, render_template, jsonify, abort, after_this_request
 from flask_scss import Scss
 from flask_httpauth import HTTPBasicAuth
 from werkzeug.security import generate_password_hash, check_password_hash
@@ -83,7 +82,17 @@ def view_page(page_name: str):
 
 @app.route('/status.svg')
 def status_image():
+    @after_this_request
+    def add_header(response):
+        if 'Cache-Control' not in response.headers:
+            response.headers['Cache-Control'] = 'no-store,max-age=0'
+        return response
     return app.send_static_file('images/status.svg')
+
+@app.route('/status.json')
+def status_json():
+    jsn = json.loads(open('data/status.json').read())
+    return jsonify(jsn)
 
 @app.route('/<file_name>.txt')
 def textfile(file_name: str):
