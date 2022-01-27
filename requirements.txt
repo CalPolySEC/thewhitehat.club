@@ -10,3 +10,4 @@ pytest
 six
 Werkzeug
 requests
+Flask-HTTPAuth
