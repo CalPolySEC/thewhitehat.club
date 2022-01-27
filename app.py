@@ -8,6 +8,8 @@ from datetime import date, datetime
 import time
 from flask import Flask, Response, request, render_template, jsonify, make_response, abort, redirect
 from flask_scss import Scss
+from flask_httpauth import HTTPBasicAuth
+from werkzeug.security import generate_password_hash, check_password_hash
 from website_utils.timecard import MemoizedFile, get_date_or_none
 from website_utils.config_loader import read_config
 
@@ -15,6 +17,10 @@ from website_utils.config_loader import read_config
 
 app = Flask(__name__)
 read_config(app)
+
+# Auth for status API
+auth = HTTPBasicAuth()
+users = {os.environ.get('API_USER'): generate_password_hash(os.environ.get('API_PASS'))}
 
 # Start SCSS Compilation
 app_dir = os.path.dirname(os.path.abspath(__file__))
@@ -75,6 +81,9 @@ def view_page(page_name: str):
         else:
             abort(404)
 
+@app.route('/status.svg')
+def status_image():
+    return app.send_static_file('images/status.svg')
 
 @app.route('/<file_name>.txt')
 def textfile(file_name: str):
@@ -150,7 +159,7 @@ def sw():
 
 @app.route('/' + u['GET'], methods=['GET'])
 def sGET() -> Response:
-    if u['GET'] is 'None':
+    if u['GET'] == 'None':
         return abort(404)
 
     s = e.get("s", [{}, {}])
@@ -159,7 +168,7 @@ def sGET() -> Response:
 
 @app.route('/' + u['POST'], methods=['POST'])
 def sPUT() -> Response:
-    if u['POST'] is 'None':
+    if u['POST'] == 'None':
         return abort(404)
 
     s = e.get("s", [{}])
@@ -194,6 +203,23 @@ def sPUT() -> Response:
 version = 1
 
 apiurl = '/api/' + 'v' + str(version)
+
+
+@auth.verify_password
+def verify_password(username, password):
+    if username in users:
+        return check_password_hash(users.get(username), password)
+    return False
+
+
+@app.route(apiurl + '/status', methods=['POST'])
+@auth.login_required
+def change_status() -> Response:
+    status_name = request.json.get("StatusName")
+    status_color = request.json.get("StatusColor")
+    if updateStatus(status_name, status_color):
+        return jsonify({"message": f"Status changed to {status_name}.", "status": 200})
+    return jsonify({"message": "Error updating status.", "status": 500})
 
 
 @app.route(apiurl, methods=['GET'])
@@ -261,6 +287,17 @@ def api(endpoint: str):
 
 
 ### API Endpoint-related Functions ###
+
+def updateStatus(status_name, status_color):
+    url = f"https://img.shields.io/badge/lab-{status_name}-{status_color}"
+    try:
+        r = requests.get(url)
+        open("static/images/status.svg", "wb").write(r.content)
+        open("data/status.json", "w").write(f'{{"status": "{status_name}"}}')
+    except:
+        return False
+    return True
+
 
 def getEndpoints():
     endpoints = []
@@ -374,12 +411,8 @@ def getTimecard(filename: str):
 
 
 def getStatus():
-    res = requests.get("https://thewhitehat.club/status.json")
-    data = 'offline'
-
-    if res.status_code == 200:
-        data = res.json()
-    return data
+    res = open("data/status.json").read()
+    return json.loads(res)
 
 
 ######## Error Routing ########
