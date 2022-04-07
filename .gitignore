@@ -10,6 +10,7 @@ local/
 .Python
 tox.ini
 venv/
+.venv/
 
 # Test Specific Git Ignores
 seclab.log
