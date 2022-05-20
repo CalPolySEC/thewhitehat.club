@@ -16,7 +16,7 @@
     "Frequently Asked Questions": [
         {
             "phrase": "Isn't hacking illegal?",
-            "description": "Depends what type of hacking! There are <b>three</b> main categories of \"hackers\": <em>Black Hat</em> hackers who are very malicious in intent, <em>CPSEC</em> hackers who ethically disclose their intents to companies, and <em>Grey Hat</em> Hackers who are in between the two and are more difficult to know if their actions are legal all the time.<br>If you're not sure about which category your actions fit into, first disclose your intentions, and most importantly, do the legal thing!"
+            "description": "Depends what type of hacking! There are <b>three</b> main categories of \"hackers\": <em>Black Hat</em> hackers who are very malicious in intent, <em>White Hat</em> hackers who ethically disclose their intents to companies, and <em>Grey Hat</em> Hackers who are in between the two and are more difficult to know if their actions are legal all the time.<br>If you're not sure about which category your actions fit into, first disclose your intentions, and most importantly, do the legal thing!"
         },
         {
             "phrase": "I'm not in Computer Science/Software Engineering, why would I like CPSEC?",
