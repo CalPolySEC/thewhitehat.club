@@ -15,6 +15,7 @@ from website_utils.config_loader import read_config
 ######## Initial Flask Application Setup/Configuration ########
 
 app = Flask(__name__)
+app.config["TEMPLATES_AUTO_RELOAD"] = True
 read_config(app)
 
 # Auth for status API
