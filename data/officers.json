@@ -1,57 +1,52 @@
 {
     "president": {
         "position": "President",
-        "name": "Jaxon Haws",
-        "image": "jaxon.jpg"
+        "name": "Steven Ngo",
+        "image": "steven.jpg"
     },
     "vicepresident": {
         "position": "Vice President",
-        "name": "Tian Wong",
-        "image": "tian.jpg"
-    },
-    "archivist": {
-        "position": "Archivist",
-        "name": "Vincent Pheng",
-        "image": "vincent.jpg"
+        "name": "Benjamin Liu",
+        "image": "ben.jpg"
     },
     "publicity": {
         "position": "Publicity",
-        "name": "Viana Chow",
-        "image": "viana.jpg"
+        "name": "Geneva Laurain",
+        "image": "geneva.jpg"
     },
-    "socialchair": {
-        "position": "Social Chair",
-        "name": "Brandon Tat",
-        "image": "brandon.jpg"
+    "socialchair&ctflead": {
+        "position": "Social Chair & CTF Lead",
+        "name": "Tian Wong",
+        "image": "tian.jpg"
+    },
+    "assistantctf": {
+        "position": "Assistant CTF Team Lead",
+        "name": "Isaac Rudnick",
+        "image": "isaac.jpg"
     },
     "treasurer": {
         "position": "Treasurer",
         "name": "Jordan Chew",
         "image": "jordan.jpg"
     },
-    "ctfmaster": {
-        "position": "CTF Team Lead",
-        "name": "Lisa Li",
-        "image": "Lisa.jpg"
-    },
-    "assistantctf": {
-        "position": "Assistant CTF Team Lead",
-        "name": "Shemely Sarain",
-        "image": "shemely.jpg"
-    },
-    "corporate": {
-        "position": "Corporate Outreach",
-        "name": "Steven Ngo",
-        "image": "steven_n.jpg"
-    },
     "webmaster": {
-        "position": "Web Master",
-        "name": "Stephen Parkinson",
-        "image": "stephen.jpg"
+        "position": "Web Admin",
+        "name": "Henry Evans",
+        "image": "henry.jpg"
     },
     "sysadmin": {
         "position": "SysAdmin",
-        "name": "Samantha Soto",
-        "image": "sam.jpg"
+        "name": "Jaxon Haws",
+        "image": "jaxon.jpg"
+    },
+    "hardwareoutreach": {
+        "position": "Hardware Outreach Lead",
+        "name": "Ellis Ruckman",
+        "image": "ellis.jpg"
+    },
+    "techteamlead": {
+        "position": "Tech Team Lead",
+        "name": "Melissa Chow",
+        "image": "melissa.jpg"
     }
 }
