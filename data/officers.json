@@ -1,52 +1,64 @@
 {
     "president": {
         "position": "President",
-        "name": "Steven Ngo",
-        "image": "steven.jpg"
+        "name": "Geneva Laurain",
+        "image": ""
     },
     "vicepresident": {
         "position": "Vice President",
-        "name": "Benjamin Liu",
-        "image": "ben.jpg"
-    },
-    "publicity": {
-        "position": "Publicity",
-        "name": "Geneva Laurain",
-        "image": "geneva.jpg"
-    },
-    "socialchair&ctflead": {
-        "position": "Social Chair & CTF Lead",
-        "name": "Tian Wong",
-        "image": "tian.jpg"
-    },
-    "assistantctf": {
-        "position": "Assistant CTF Team Lead",
-        "name": "Isaac Rudnick",
-        "image": "isaac.jpg"
+        "name": "Sophie Russ",
+        "image": ""
     },
     "treasurer": {
         "position": "Treasurer",
-        "name": "Jordan Chew",
-        "image": "jordan.jpg"
+        "name": "Isaac Rudnick",
+        "image": ""
     },
-    "webmaster": {
-        "position": "Web Admin",
-        "name": "Henry Evans",
-        "image": "henry.jpg"
+    "ctflead": {
+        "position": "CTF Lead",
+        "name": "Ben Garvin",
+        "image": ""
+    },
+    "socialchair": {
+        "position": "Social Chair",
+        "name": "Ryan Schmitt",
+        "image": ""
+    },
+    "publicity": {
+        "position": "Publicity",
+        "name": "Jenna Schmitt",
+        "image": ""
     },
     "sysadmin": {
         "position": "SysAdmin",
-        "name": "Jaxon Haws",
-        "image": "Jaxon.jpg"
+        "name": "Henry Evans",
+        "image": ""
     },
-    "hardwareoutreach": {
-        "position": "Hardware Outreach Lead",
-        "name": "Ellis Ruckman",
-        "image": "ellis.jpg"
+     "webmaster": {
+        "position": "Web Admin",
+        "name": "Kabir Gupta",
+        "image": ""
     },
-    "techteamlead": {
-        "position": "Tech Team Lead",
-        "name": "Melissa Chow",
-        "image": "melissa.jpg"
+    "archivist": {
+        "position": "Archivist",
+        "name": "Tobe Ohajunwa",
+        "image": ""
+    },
+    "corporateliason": {
+        "position": "Corporate Liaison",
+        "name": "Scott Eisenberg",
+        "image": ""
+    },
+    "merchandising": {
+        "position": "Merchandising Coordinator",
+        "name": "Taryn Sears",
+        "image": ""
+    },
+    "graphics": {
+        "position": "Graphics",
+        "name": "Garrett Chan",
+        "image": ""
     }
 }
+
+
