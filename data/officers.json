@@ -2,23 +2,27 @@
     "president": {
         "position": "President",
         "name": "Geneva Laurain",
-        "image": ""
+        "image": "",
+        "email": "glaurain@calpoly.edu"
     },
     "vicepresident": {
         "position": "Vice President",
         "name": "Sophie Russ",
-        "image": ""
+        "image": "",
+        "email": "soruss@calpoly.edu"
+    },
+    "ctflead": {
+        "position": "CTF Lead",
+        "name": "Ben Garvin",
+        "image": "",
+        "email": "bgarvin@calpoly.edu"
     },
     "treasurer": {
         "position": "Treasurer",
         "name": "Isaac Rudnick",
         "image": ""
     },
-    "ctflead": {
-        "position": "CTF Lead",
-        "name": "Ben Garvin",
-        "image": ""
-    },
+    
     "socialchair": {
         "position": "Social Chair",
         "name": "Ryan Schmitt",
@@ -34,7 +38,7 @@
         "name": "Henry Evans",
         "image": ""
     },
-     "webmaster": {
+    "webmaster": {
         "position": "Web Admin",
         "name": "Kabir Gupta",
         "image": ""
@@ -60,5 +64,3 @@
         "image": ""
     }
 }
-
-

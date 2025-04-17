@@ -3,33 +3,47 @@
     <div class="content">
         <div class="content" id="landing-bg"></div>
         <div class="officer-container">
-                <div class="officer-logo">
-                    {% include 'includes/logo.svg' %}
+            <div class="officer-logo">
+                {% include 'includes/logo.svg' %}
+            </div>
+            <div class="officers">
+                <div class="officers-left">
+                    {% for i in range(0, page_data['positions']|length // 2) %}
+                    <div class="officer-item">
+                        <img src="/officers-{{ page_data['officers'][page_data['positions'][i]]['image'] or 'default' }}">
+                        <div>
+                            <h3><strong>{{ page_data['officers'][page_data['positions'][i]]['position'] }}</strong></h3>
+                            <h4>{{ page_data['officers'][page_data['positions'][i]]['name'] }}</h4>
+                            {% if page_data['officers'][page_data['positions'][i]]['email'] %}
+                                <p style="color: white; margin: 0;">
+                                    <a href="mailto:{{ page_data['officers'][page_data['positions'][i]]['email'] }}" style="color: white; text-decoration: underline; font-size: 0.995rem;">
+                                        {{ page_data['officers'][page_data['positions'][i]]['email'] }}
+                                    </a>
+                                </p>
+                            {% endif %}
+                        </div>
+                    </div>
+                    {% endfor %}
                 </div>
-                <div class="officers">
-                    <div class="officers-left">
-                        {% for i in range(0, page_data['positions']|length // 2) %}
-                        <div class="officer-item">
-                            <img height: inherit src="/officers-{{ page_data['officers'][page_data['positions'][i]]['image'] }}">
-                            <div>
-                                <h3><strong>{{ page_data['officers'][page_data['positions'][i]]['position'] }}</strong></h3>
-                                <h4>{{ page_data['officers'][page_data['positions'][i]]['name'] }}</h4>
-                            </div>
+                <div class="officers-right">
+                    {% for i in range(page_data['positions']|length // 2, page_data['positions']|length) %}
+                    <div class="officer-item">
+                        <img src="/officers-{{ page_data['officers'][page_data['positions'][i]]['image'] or 'default' }}">
+                        <div>
+                            <h3><strong>{{ page_data['officers'][page_data['positions'][i]]['position'] }}</strong></h3>
+                            <h4>{{ page_data['officers'][page_data['positions'][i]]['name'] }}</h4>
+                            {% if page_data['officers'][page_data['positions'][i]]['email'] %}
+                                <p style="color: white; margin: 0;">
+                                    <a href="mailto:{{ page_data['officers'][page_data['positions'][i]]['email'] }}" style="color: white; text-decoration: underline;">
+                                        {{ page_data['officers'][page_data['positions'][i]]['email'] }}
+                                    </a>
+                                </p>
+                            {% endif %}
                         </div>
-                        {% endfor %}
                     </div>
-                    <div class="officers-right">
-                        {% for i in range(page_data['positions']|length // 2, page_data['positions']|length) %}
-                        <div class="officer-item">
-                            <img height: inherit src="/officers-{{ page_data['officers'][page_data['positions'][i]]['image'] }}">
-                            <div>
-                                <h3><strong>{{ page_data['officers'][page_data['positions'][i]]['position'] }}</strong></h3>
-                                <h4>{{ page_data['officers'][page_data['positions'][i]]['name'] }}</h4>
-                            </div>
-                        </div>
-                        {% endfor %}
-                    </div>
+                    {% endfor %}
                 </div>
             </div>
+        </div>
     </div>
 {% endblock %}

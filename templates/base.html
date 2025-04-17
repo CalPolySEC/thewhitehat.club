@@ -4,10 +4,17 @@
     
     <body class="site">
         {% include 'includes/navbar.html' %}
+
+        <!-- SPRING QUARTER INFO -->
+        <div style="background-color: #ffd5a5; color: #000; padding: 1rem; text-align: center; font-size: 1.2rem;">
+            <strong>Spring Quarter Meetings:</strong> General meetings every <strong>Tuesday 6:10–7 PM</strong> in <strong>Engineering IV (192-206)</strong>. Office hours every <strong>Saturday at 1 PM</strong> in the Lab.
+        </div>
+
         <!-- SITE CONTENT -->
         <main>
-            {% block body %}Hello World{% endblock %}
+            {% block body %}{% endblock %}
         </main>
+
         {% include 'includes/footer.html' %}
     </body>
 </html>
