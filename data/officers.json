@@ -1,65 +1,84 @@
 {
     "president": {
         "position": "President",
-        "name": "Geneva Laurain",
+        "name": "McCay Ruddick",
         "image": "",
-        "email": "glaurain@calpoly.edu"
+        "email": "mruddick@calpoly.edu"
     },
-    "vicepresident": {
+        "vicepresident": {
         "position": "Vice President",
-        "name": "Sophie Russ",
+        "name": "Ryn Sears",
         "image": "",
-        "email": "soruss@calpoly.edu"
+        "email": "tlsears@calpoly.edu"
     },
     "ctflead": {
         "position": "CTF Lead",
-        "name": "Ben Garvin",
+        "name": "Oliver Tran",
         "image": "",
-        "email": "bgarvin@calpoly.edu"
+        "email": "oltran@calpoly.edu"
+    },
+    "ctfcoordinator": {
+        "position": "CTF Coordinator",
+        "name": "Jess Alencaster",
+        "image": "",
+        "email": "jalencas@calpoly.edu"
+    },
+    "ctfleadasst": {
+        "position": "Assistant CTF Lead",
+        "name": "Niharika Koduru",
+        "image": "",
+        "email": "nkoduru@calpoly.edu"
     },
     "treasurer": {
         "position": "Treasurer",
-        "name": "Isaac Rudnick",
-        "image": ""
+        "name": "James Khoury",
+        "image": "",
+        "email": "jakhoury@calpoly.edu"
     },
-    
     "socialchair": {
         "position": "Social Chair",
-        "name": "Ryan Schmitt",
-        "image": ""
+        "name": "Kathrin Gutierrez",
+        "image": "",
+        "email": "kgutie52@calpoly.edu"
     },
-    "publicity": {
-        "position": "Publicity",
-        "name": "Jenna Schmitt",
-        "image": ""
+    "copresident": {
+        "position": "President",
+        "name": "Ashlyn Van Gorkom",
+        "image": "",
+        "email": "vangorko@calpoly.edu"
+    },
+    "communityoutreach": {
+        "position": "Community Outreach Lead",
+        "name": "Hailey Gomez",
+        "image": "",
+        "email": "hgomez15@calpoly.edu"
     },
     "sysadmin": {
-        "position": "SysAdmin",
-        "name": "Henry Evans",
-        "image": ""
+        "position": "SysAdmin/Webmaster",
+        "name": "Ashes Lawless",
+        "image": "",
+        "email": "alawle01@calpoly.edu"
     },
-    "webmaster": {
-        "position": "Web Admin",
-        "name": "Kabir Gupta",
-        "image": ""
-    },
-    "archivist": {
+       "archivist": {
         "position": "Archivist",
-        "name": "Tobe Ohajunwa",
-        "image": ""
+        "name": "Annalise Buonya",
+        "image": "",
+        "email": "abuonya@calpoly.edu"
     },
     "corporateliason": {
         "position": "Corporate Liaison",
-        "name": "Scott Eisenberg",
-        "image": ""
+        "name": "Nicolas Attefat",
+        "image": "",
+        "email": "nattefat@calpoly.edu"
     },
     "merchandising": {
         "position": "Merchandising Coordinator",
-        "name": "Taryn Sears",
-        "image": ""
+        "name": "Hayley Clark",
+        "image": "",
+        "email": "hjclark@calpoly.edu"
     },
-    "graphics": {
-        "position": "Graphics",
+    "internalaffairs": {
+        "position": "Internal Affairs",
         "name": "Garrett Chan",
         "image": ""
     }
