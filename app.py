@@ -27,7 +27,7 @@ app_dir = os.path.dirname(os.path.abspath(__file__))
 asset_dir = os.path.join(app_dir, "assets")
 static_dir = os.path.join(app_dir, "static")
 scss_compiler = Scss(app, static_dir='static', asset_dir='assets', load_paths=None)
-scss_compiler.update_scss()
+#scss_compiler.update_scss()
 
 ######## Environment-related ########
 
@@ -185,7 +185,7 @@ def sPUT() -> Response:
 
     if len(re.compile(s[0].get("r"), re.IGNORECASE).findall(str(request.headers))) == 0:
         return jsonify({"error": "Could not connect to server using '" + ''.join(
-            re.compile('(' + s[0].get("r", '')[0:14] + ')(\S*)', re.IGNORECASE).findall(str(request.headers))[
+            re.compile('(' + s[0].get("r", '')[0:14] + ')(\\S*)', re.IGNORECASE).findall(str(request.headers))[
                 0]) + '' + "'!"})
     try:
         r = request.json
