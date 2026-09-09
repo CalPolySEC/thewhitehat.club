@@ -17,12 +17,6 @@
         "image": "",
         "email": "oltran@calpoly.edu"
     },
-    "ctfcoordinator": {
-        "position": "CTF Coordinator",
-        "name": "Jess Alencaster",
-        "image": "",
-        "email": "jalencas@calpoly.edu"
-    },
     "ctfleadasst": {
         "position": "Assistant CTF Lead",
         "name": "Niharika Koduru",
@@ -81,5 +75,12 @@
         "position": "Internal Affairs",
         "name": "Garrett Chan",
         "image": ""
+    },
+    "advisor": {
+        "position": "Advisor",
+        "name": "Stephen Beard",
+        "image": "",
+        "email": "srbeard@calpoly.edu"
     }
+
 }
