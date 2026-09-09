@@ -35,17 +35,17 @@
         "image": "",
         "email": "kgutie52@calpoly.edu"
     },
-    "copresident": {
-        "position": "President",
-        "name": "Ashlyn Van Gorkom",
-        "image": "",
-        "email": "vangorko@calpoly.edu"
-    },
     "communityoutreach": {
         "position": "Community Outreach Lead",
         "name": "Hailey Gomez",
         "image": "",
         "email": "hgomez15@calpoly.edu"
+    },
+    "copresident": {
+        "position": "President",
+        "name": "Ashlyn Van Gorkom",
+        "image": "",
+        "email": "vangorko@calpoly.edu"
     },
     "sysadmin": {
         "position": "SysAdmin/Webmaster",
