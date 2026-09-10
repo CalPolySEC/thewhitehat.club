@@ -1,9 +1,9 @@
 {
     "building": {
-        "name": "Bonderson",
-        "number": "197"
+        "name": "Engineering IV",
+        "number": "192"
     },
-    "room": "204",
+    "room": "206",
     "images": [
         "/lab1.jpg",
         "/lab2.jpg",

@@ -93,9 +93,9 @@
             "description": "the official link to our CTF team! Click to view how we've been doing!"
         },
         {
-            "name": "Slack",
-            "link": "https://join.slack.com/t/cpsecurity/signup",
-            "description": "join our Slack to stay up-to-date on our CTF events and communications!"
+            "name": "Discord",
+            "link": "https://discord.gg/DEpZW6yxeh",
+            "description": "join our Discord Server to stay up-to-date on our CTF events and communications!"
         },
         {
             "name": "OnTheHub",
