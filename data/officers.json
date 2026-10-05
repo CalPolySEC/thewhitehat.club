@@ -2,61 +2,61 @@
     "president": {
         "position": "President",
         "name": "McCay Ruddick",
-        "image": "",
+        "image": "McCay-Ruddick.jpg",
         "email": "mruddick@calpoly.edu"
     },
         "vicepresident": {
         "position": "Vice President",
         "name": "Ryn Sears",
-        "image": "",
+        "image": "Ryn-Sears.jpeg",
         "email": "tlsears@calpoly.edu"
     },
     "ctflead": {
         "position": "CTF Lead",
         "name": "Oliver Tran",
-        "image": "",
+        "image": "Oliver-Tran.png",
         "email": "oltran@calpoly.edu"
     },
     "ctfleadasst": {
         "position": "Assistant CTF Lead",
         "name": "Niharika Koduru",
-        "image": "",
+        "image": "Niharika-Koduru.jpeg",
         "email": "nkoduru@calpoly.edu"
     },
     "treasurer": {
         "position": "Treasurer",
         "name": "James Khoury",
-        "image": "",
+        "image": "James-Khoury.png",
         "email": "jakhoury@calpoly.edu"
     },
     "socialchair": {
         "position": "Social Chair",
         "name": "Kathrin Gutierrez",
-        "image": "",
+        "image": "Kathrin-Gutierrez.jpg",
         "email": "kgutie52@calpoly.edu"
     },
     "communityoutreach": {
         "position": "Community Outreach Lead",
         "name": "Hailey Gomez",
-        "image": "",
+        "image": "Hailey-Gomez.jpg",
         "email": "hgomez15@calpoly.edu"
     },
     "copresident": {
         "position": "President",
         "name": "Ashlyn Van Gorkom",
-        "image": "",
+        "image": "Ashlyn-Van-Gorkom.jpeg",
         "email": "vangorko@calpoly.edu"
     },
     "sysadmin": {
         "position": "SysAdmin/Webmaster",
         "name": "Ashes Lawless",
-        "image": "",
+        "image": "Ashes-Lawless.jpg",
         "email": "alawle01@calpoly.edu"
     },
        "archivist": {
         "position": "Archivist",
         "name": "Annalise Buonya",
-        "image": "",
+        "image": "Annalise-Buonya.jpeg",
         "email": "abuonya@calpoly.edu"
     },
     "corporateliason": {
@@ -68,18 +68,18 @@
     "merchandising": {
         "position": "Merchandising Coordinator",
         "name": "Hayley Clark",
-        "image": "",
+        "image": "Hayley-Clark.jpeg",
         "email": "hjclark@calpoly.edu"
     },
     "internalaffairs": {
         "position": "Internal Affairs",
         "name": "Garrett Chan",
-        "image": ""
+        "image": "Garrett-Chan.jpeg"
     },
     "advisor": {
         "position": "Advisor",
         "name": "Stephen Beard",
-        "image": "",
+        "image": "Stephen-Beard.png",
         "email": "srbeard@calpoly.edu"
     }
 

@@ -99,18 +99,15 @@ def status_json():
 def textfile(file_name: str):
     return app.send_static_file(file_name + '.txt')
 
+# Handle common images, and rewrite officer urls lol
+# May be useful later: '-'.join(file_name.split('-')[1:])
+@app.route('/<file_name>.<any("jpg", "jpeg", "png", "webp"):file_type>')
+def img(file_name: str, file_type: str):
 
-@app.route('/<file_name>.jpg')
-def jpg(file_name: str):
     if file_name.split('-')[0] == 'officers':
-        return app.send_static_file('images/officers/' + file_name.split('-')[1] + '.jpg')
+        return app.send_static_file('images/officers/' + file_name.replace("officers-", "") + '.' + file_type)
     else:
-        return app.send_static_file('images/' + file_name + '.jpg')
-
-
-@app.route('/<file_name>.png')
-def png(file_name: str):
-    return app.send_static_file('images/' + file_name + '.png')
+        return app.send_static_file('images/' + file_name + '.' + file_type)
 
 
 @app.route('/<file_name>.ico')
