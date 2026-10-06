@@ -5,7 +5,7 @@ itsdangerous
 Jinja2
 MarkupSafe
 py
-pyScss
+pyScss@git+https://github.com/Kronuz/pyScss.git
 pytest
 six
 Werkzeug

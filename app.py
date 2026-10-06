@@ -27,7 +27,7 @@ app_dir = os.path.dirname(os.path.abspath(__file__))
 asset_dir = os.path.join(app_dir, "assets")
 static_dir = os.path.join(app_dir, "static")
 scss_compiler = Scss(app, static_dir='static', asset_dir='assets', load_paths=None)
-#scss_compiler.update_scss()
+scss_compiler.update_scss()
 
 ######## Environment-related ########
 
