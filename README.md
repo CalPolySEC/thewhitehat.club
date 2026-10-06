@@ -1,21 +1,15 @@
 # thewhitehat.club
 
-This is a [Flask](http://flask.pocoo.org) app to run [https://thewhitehat.club](https://thewhitehat.club)
+This is a [Flask](https://flask.palletsprojects.com/en/stable/) app to run [https://cpsecurity.club](https://cpsecurity.club)
 
 ----
 
 ## Running the App (Development)
 
-1. To run the site, install virtualenv on your machine with:
+1. Create a new virtualenv in the root of the git repository and activate it with :
 
 ```bash
-pip3 install vitualenv
-```
-
-2. Create a new virtualenv in the root of the git repository and activate it with :
-
-```bash
-virtualenv venv
+python -m venv venv
 source venv/bin/activate
 ```
 
@@ -30,11 +24,12 @@ pip3 install -r requirements.txt
 ```bash
 mkdir static/css
 ```
+5. Add API_PASS to ENV
 
-5. And finally, run the app with
+6. And finally, run the app with
 
 ```bash
-python3 app.py
+flask run --debug
 ```
 
-6. Visit [0.0.0.0:3000](0.0.0.0:3000) to view the site running locally.
+7. Visit [127.0.0.1:3000](127.0.0.1:3000) to view the site running locally.
